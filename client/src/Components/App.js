@@ -27,6 +27,14 @@ function App() {
     .then((data) => setWalkers(data))
   },[])
 
+  useEffect(() => {
+    fetch("/user").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setClient(user));
+      }
+    })
+  }, [])
+
   const updateClient = (client) => setClient(client)
 
   return (

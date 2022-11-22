@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 function Account({client, setClient}){
 
     const { id } = useParams();
+    
     useEffect(() =>{
         fetch(`/clients/${id}`)
         .then((r) => {

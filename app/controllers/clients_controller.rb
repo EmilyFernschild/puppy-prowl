@@ -11,7 +11,7 @@ class ClientsController < ApplicationController
 
   # GET /clients/1
   def show
-    render json: @client, status: :ok
+    render json: set_client, status: :ok
   end
 
    # for autologin feat
@@ -22,31 +22,31 @@ class ClientsController < ApplicationController
   # POST /clients
   # modified for signup feat 
   def create
-    @client = Client.create!(client_params)
-    session[:client_id] = @client.id
-    render json: @client, status: :created
+    client = Client.create!(client_params)
+    session[:client_id] = client.id
+    render json: client, status: :created
   end
 
   # PATCH/PUT /clients/1
   def update
-    @client.update!(client_params)
-    render json: @client, status: :accepted
+    render json: set_client.update!(client_params), status: :accepted
   end
 
   # DELETE /clients/1
   def destroy
-    @client.destroy
+    set_client.destroy
     head.no_content
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client
-      @client = Client.find(params[:id])
+      Client.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def client_params
-      params.permit(:client_name, :username, :password_digest, :email, :address, :phone_number)
+      params.permit(:client_name, :username, :password, :email, :address, :phone_number)
     end
+
 end
