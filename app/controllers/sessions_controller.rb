@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     # client or user ?
     def create
       client = Client.find_by(username: params[:username])
-      if user&.authenticate(params[:password])
+      if client&.authenticate(params[:password])
         session[:client_id] = client.id
         render json: client
       else

@@ -1,6 +1,7 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: %i[ show update destroy ]
-  skip_before_action :authorize
+  skip_before_action :authorize, only: :show
+  skip_before_action :authorize, only: :create
   # GET /clients
   # def index
   #   @clients = Client.all

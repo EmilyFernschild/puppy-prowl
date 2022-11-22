@@ -1,8 +1,9 @@
+import PupCard from "./PupCard"
 
-function PupsContainer(){
+function PupsContainer({pups}){
     return (
-        <div>
-            PupsContainer!
+        <div className="PupContainer">
+            {pups?.map(pup => <PupCard key={pup.id} pup={pup} />)}
         </div>
     )
 }

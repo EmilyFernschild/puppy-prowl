@@ -1,8 +1,10 @@
+import WalkerCard from "./WalkerCard"
 
-function WalkersContainer(){
+function WalkersContainer({walkers}){
+   
     return (
         <div>
-            WalkersContainer!
+            {walkers?.map(walker => <WalkerCard key={walker.id} walker={walker} />)}
         </div>
     )
 }
