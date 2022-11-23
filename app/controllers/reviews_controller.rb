@@ -7,9 +7,9 @@ class ReviewsController < ApplicationController
   end
 
   # GET /reviews/1
-  def show
-    render json: @review, status: :ok
-  end
+  # def show
+  #   render json: @review, status: :ok
+  # end
 
   # POST /reviews
   def create

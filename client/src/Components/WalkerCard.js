@@ -8,7 +8,7 @@ function Walker({walker}){
         e.preventDefault()
         navigate(`/Appointments`)
     }
-    
+
     return (
         <div>
            <div>{walker.walker_name}</div>
@@ -16,6 +16,8 @@ function Walker({walker}){
            <div>{walker.services}</div>
            <div>{`$${walker.rates}/hour`}</div>
            <div>{walker.location}</div>
+           <ul>{walker.reviews?.map((review) => <li key={review.id}>{review.date} {review.comment}</li>)}</ul>
+           {/* need to have a button to go to review form to create new review */}
            <button onClick = {onClick} >Book A Walk!</button>
            <br/>
         </div>
