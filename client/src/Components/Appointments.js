@@ -1,8 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import addDays from 'date-fns/addDays'
+import setHours from 'date-fns/setHours'
+import setMinutes from 'date-fns/setMinutes'
 
 function Appointments({walkers, client, addNewAppointment}){
-    const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState("");
     // const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
     // const [bookingTimes, setBookingTimes] = useState([]);
     // const timeSlotCacheRef = useRef(new Map());
@@ -11,8 +16,12 @@ function Appointments({walkers, client, addNewAppointment}){
     const [numberOfDogs, setNumberOfDogs] = useState(0);
     const [groupWalks, setGroupWalks] = useState(false);
     const [errors, setErrors] = useState([]);
-    // const [isLoading, setIsLoading] = useState(false);
-    
+
+    const filterPassedTime = (time) => {
+        const currentDate = new Date();
+        const selectedDate = new Date(time);
+        return currentDate.getTime() < selectedDate.getTime();
+      };
     // const times = [
     //     "09:00 - 10:00",
     //     "10:00 - 11:00",
@@ -51,6 +60,10 @@ function Appointments({walkers, client, addNewAppointment}){
         })
     }
 
+    function handleDateSelect(){
+
+    }
+
     return (
     <div> 
         <form onSubmit={handleSubmit}>
@@ -72,10 +85,31 @@ function Appointments({walkers, client, addNewAppointment}){
             <input type='checkbox' name='groupWalks' value={groupWalks} onChange={(e)=>{setGroupWalks(e.target.value)}}/>
             <br/>
             <label>Please Select Date and Time: </label>
-            <input type='date' name='date' value={date} onChange={(e)=>{setDate(e.target.value)}}/>
+            {/* <input type='date' name='date' value={date} onChange={(e)=>{setDate(e.target.value)}}/> */}
+            <DatePicker
+                placeholderText="Click to select a date"
+                selected={date}
+                onSelect={handleDateSelect}
+                onChange={(date)=>{setDate(date)}}
+                name='date'
+                showTimeSelect
+                timeFormat="HH:mm"
+                timeIntervals={15}
+                timeCaption="time"
+                dateFormat="MMMM d, yyyy h:mm"
+                isClearable={true}
+                minDate={new Date()}
+                maxDate={addDays(new Date(), 14)}
+                withPortal
+                showMonthDropdown
+                minTime={setHours(setMinutes(new Date(), 0), 8)}
+                maxTime={setHours(setMinutes(new Date(), 0), 17)}
+                filterTime={filterPassedTime}
+            />
             <br/>
             <button type="submit">Submit Dog Walk Appointment!</button>
         </form>
+        {errors? <div className='errors'>{errors} </div>:null}
     </div>
     )
 }

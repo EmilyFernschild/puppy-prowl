@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
-  skip_before_action :authorize
+  skip_before_action :authorize, only: :index
+  skip_before_action :authorize, only: :show
   # GET /appointments
   def index
     render json: Appointment.all, status: :ok
@@ -13,7 +14,7 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   def create
     appointments = @current_user.appointments.create!(appointment_params)
-    render json: @current_user.appointments, status: :created
+    render json: appointments, status: :created
   end
 
   # PATCH/PUT /appointments/1
