@@ -1,4 +1,5 @@
 // import { useState, useEffect } from "react";
+import "../App.css"
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
@@ -14,6 +15,7 @@ function App() {
   const [pups, setPups] = useState([])
   const [walkers, setWalkers] = useState([])
   const [client, setClient] = useState(false)
+  const [appointments, setAppointments] = useState([])
 
   useEffect(() => {
     fetch("/dogs")
@@ -28,6 +30,12 @@ function App() {
   },[])
 
   useEffect(() => {
+    fetch("/appointments")
+    .then((res) => res.json())
+    .then((data) => setAppointments(data))
+  },[])
+
+  useEffect(() => {
     fetch("/user").then((r) => {
       if (r.ok) {
         r.json().then((user) => setClient(user));
@@ -36,6 +44,10 @@ function App() {
   }, [])
 
   const updateClient = (client) => setClient(client)
+
+  function addNewAppointment(newApptObj){
+    setAppointments(prev => [...prev, newApptObj])
+  }
 
   return (
     <div className="App">
@@ -46,7 +58,7 @@ function App() {
         <Route path="/WalkersContainer" element = {<WalkersContainer walkers={walkers} />}/>
         <Route path="/Login" element = {<Login updateClient={updateClient} />}/>
         <Route path="/Signup" element = {<Signup updateClient={updateClient} />}/>
-        <Route path="/Appointments" element = {<Appointments />}/>
+        <Route path="/Appointments" element = {<Appointments walkers={walkers} client={client} addNewAppointment={addNewAppointment} />}/>
         <Route path="/client/:id" element = {<Account client={client} setClient={setClient} />}/>
       </Routes>
     </div>

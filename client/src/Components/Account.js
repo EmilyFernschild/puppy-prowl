@@ -28,9 +28,9 @@ function Account({client, setClient}){
                return <li key={dog.id}>{dog.dog_name}</li>
            })}
            </ul>
-           <ul> {!client.appointments? `Walk(s): ${client.appointments?.map((appt) => {
+           <ul> Next appointment times:  {client.appointments?.map((appt) => {
                return <li key={appt.id}>{appt.appointment}</li>
-           })}`: null}
+           })}
            </ul>
         </div>
     )
