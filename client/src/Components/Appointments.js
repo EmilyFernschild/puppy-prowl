@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,8 +8,6 @@ import setMinutes from 'date-fns/setMinutes'
 
 function Appointments({walkers, client, addNewAppointment}){
     const [date, setDate] = useState("");
-    // const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
-    // const [bookingTimes, setBookingTimes] = useState([]);
     // const timeSlotCacheRef = useRef(new Map());
     const [dogWalkerId, setDogWalkerId] = useState("");
     const [clientId, setClientId] = useState(client.id);
@@ -22,16 +20,6 @@ function Appointments({walkers, client, addNewAppointment}){
         const selectedDate = new Date(time);
         return currentDate.getTime() < selectedDate.getTime();
       };
-    // const times = [
-    //     "09:00 - 10:00",
-    //     "10:00 - 11:00",
-    //     "11:00 - 12:00",
-    //     "12:00 - 13:00",
-    //     "13:00 - 14:00",
-    //     "14:00 - 15:00",
-    //     "15:00 - 16:00",
-    //     "16:00 - 17:00"
-    //   ];
       
     let navigate = useNavigate();
 

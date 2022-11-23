@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useParams } from "react-router";
+import AccountAppoint from "./AccountAppoint";
 
-function Account({client, setClient}){
+function Account({client, setClient, updateAppt, deleteAppt, appointments}){
 
     const { id } = useParams();
     
@@ -15,6 +16,7 @@ function Account({client, setClient}){
             }
         })
     }, [id])
+    
 
     return (
         <div>
@@ -28,10 +30,10 @@ function Account({client, setClient}){
                return <li key={dog.id}>{dog.dog_name}</li>
            })}
            </ul>
-           <ul> Next appointment times:  {client.appointments?.map((appt) => {
-               return <li key={appt.id}>{appt.appointment}</li>
+           <div>Appointments: </div>
+           {client.appointments?.map((appointment) => {
+               return <AccountAppoint key={appointment.id} appointment={appointment} updateAppt={updateAppt} deleteAppt={deleteAppt} appointments={appointments} />
            })}
-           </ul>
         </div>
     )
 }

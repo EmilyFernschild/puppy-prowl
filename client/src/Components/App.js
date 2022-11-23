@@ -10,6 +10,7 @@ import Signup from "./Signup";
 import Appointments from "./Appointments";
 import Account from "./Account";
 import { useState, useEffect } from "react";
+import AccountContainer from "./AccountAppoint";
 
 function App() {
   const [pups, setPups] = useState([])
@@ -49,6 +50,22 @@ function App() {
     setAppointments(prev => [...prev, newApptObj])
   }
 
+  function updateAppt(updatedApptObj){
+    const newApptObj = appointments?.map((appt)=> {
+      if(appt.id === updatedApptObj.id){
+        return (updatedApptObj)
+      } else
+      return appt
+    })
+    setAppointments(newApptObj)
+  }
+
+  function deleteAppt(deletedAppt){
+    const updatedAppts = appointments.filter((appt)=> appt.id !== deletedAppt.id)
+    setAppointments(updatedAppts)
+  }
+
+
   return (
     <div className="App">
       <NavBar client={client} updateClient={updateClient} />
@@ -59,8 +76,8 @@ function App() {
         <Route path="/Login" element = {<Login updateClient={updateClient} />}/>
         <Route path="/Signup" element = {<Signup updateClient={updateClient} />}/>
         <Route path="/Appointments" element = {<Appointments walkers={walkers} client={client} addNewAppointment={addNewAppointment} />}/>
-        <Route path="/client/:id" element = {<Account client={client} setClient={setClient} />}/>
-      </Routes>
+        <Route path="/client/:id" element = {<Account appointments={appointments} updateAppt={updateAppt} deleteAppt={deleteAppt} client={client} setClient={setClient} />}/>
+     </Routes>
     </div>
   );
 }
