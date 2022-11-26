@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Review from "./Review";
 
 function Walker({walker}){
 
@@ -16,7 +17,7 @@ function Walker({walker}){
            <div>{walker.services}</div>
            <div>{`$${walker.rates}/hour`}</div>
            <div>{walker.location}</div>
-           <ul>{walker.reviews?.map((review) => <li key={review.id}>{review.date} {review.comment}</li>)}</ul>
+           <ul>{walker.reviews?.map((review) => <Review key={review.id} review={review} />)}</ul>
            {/* need to have a button to go to review form to create new review */}
            <button onClick = {onClick} >Book A Walk!</button>
            <br/>

@@ -9,8 +9,8 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Appointments from "./Appointments";
 import Account from "./Account";
+import NewPupForm from "./NewPupForm";
 import { useState, useEffect } from "react";
-import AccountContainer from "./AccountAppoint";
 
 function App() {
   const [pups, setPups] = useState([])
@@ -65,6 +65,19 @@ function App() {
     setAppointments(updatedAppts)
   }
 
+  function deleteDog(deletedDog){
+    const updatedDogs = pups.filter((dog)=> dog.id !== deletedDog.id)
+    setAppointments(updatedDogs)
+  }
+
+  function deleteClient(deletedClient){
+    const updatedClients = client.id !== deletedClient.id
+    setClient(updatedClients)
+  }
+
+  function addNewPup(newPupObj){
+    setPups( prev => [...prev, newPupObj])
+  }
 
   return (
     <div className="App">
@@ -72,11 +85,12 @@ function App() {
       <Routes>
         <Route exact path="/" element = {<Home />}/>
         <Route path="/PupsContainer" element = {<PupsContainer pups={pups} />}/>
+        <Route path="/NewPupForm" element = {<NewPupForm addNewPup={addNewPup} client={client} />}/>
         <Route path="/WalkersContainer" element = {<WalkersContainer walkers={walkers} />}/>
         <Route path="/Login" element = {<Login updateClient={updateClient} />}/>
         <Route path="/Signup" element = {<Signup updateClient={updateClient} />}/>
         <Route path="/Appointments" element = {<Appointments walkers={walkers} client={client} addNewAppointment={addNewAppointment} />}/>
-        <Route path="/client/:id" element = {<Account appointments={appointments} updateAppt={updateAppt} deleteAppt={deleteAppt} client={client} setClient={setClient} />}/>
+        <Route path="/client/:id" element = {<Account pups={pups} appointments={appointments} updateAppt={updateAppt} deleteAppt={deleteAppt} deleteClient={deleteClient} deleteDog={deleteDog} client={client} setClient={setClient} />}/>
      </Routes>
     </div>
   );

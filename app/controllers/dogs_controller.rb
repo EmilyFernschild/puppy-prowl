@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: %i[ show update destroy ]
-  skip_before_action :authorize
+  # skip_before_action :authorize
   # GET /dogs
   def index
     render json: Dog.all, status: :ok

@@ -1,4 +1,5 @@
-
+import { compareAsc } from 'date-fns';
+import moment from "moment";
 
 function AccountAppoint({appointment, updateAppt, deleteAppt}){
 
@@ -21,9 +22,13 @@ function AccountAppoint({appointment, updateAppt, deleteAppt}){
         })
         deleteAppt(appointment)
     }
+    
+        const dates = [moment(appointment.appointment).utc().format('LLLL')]
+        const fDates = dates.sort(compareAsc)
+        
     return (
         <div>
-            <div>{appointment.appointment}</div>
+            <div>{fDates}</div>
             {/* <button onClick={handleUpdate}>Update</button> */}
             <button onClick={handleDelete}>x</button>
         </div>
