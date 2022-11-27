@@ -10,13 +10,15 @@ import Signup from "./Signup";
 import Appointments from "./Appointments";
 import Account from "./Account";
 import NewPupForm from "./NewPupForm";
+import EditPupForm from "./EditPupForm";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [pups, setPups] = useState([])
-  const [walkers, setWalkers] = useState([])
-  const [client, setClient] = useState(false)
-  const [appointments, setAppointments] = useState([])
+  const [pups, setPups] = useState([]);
+  const [pupToEdit, setPupToEdit] = useState([]);
+  const [walkers, setWalkers] = useState([]);
+  const [client, setClient] = useState(false);
+  const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
     fetch("/dogs")
@@ -59,6 +61,21 @@ function App() {
     })
     setAppointments(newApptObj)
   }
+  
+  function onUpdatePup (updatedPup){
+    setPups(pups => pups?.map(pup => {
+      if (pup.id === updatedPup.id) {
+        return updatedPup;
+      } else {
+        return pup;
+      }
+    }))
+    setPupToEdit([]);
+  };
+
+  const onEditPup = (pupToEdit) => {
+    setPupToEdit(pupToEdit);
+  };
 
   function deleteAppt(deletedAppt){
     const updatedAppts = appointments.filter((appt)=> appt.id !== deletedAppt.id)
@@ -84,16 +101,17 @@ function App() {
       <NavBar client={client} updateClient={updateClient} />
       <Routes>
         <Route exact path="/" element = {<Home />}/>
-        <Route path="/PupsContainer" element = {<PupsContainer pups={pups} />}/>
-        <Route path="/NewPupForm" element = {<NewPupForm addNewPup={addNewPup} client={client} />}/>
+        <Route path="/PupsContainer" element = {<PupsContainer pups={pups} setPups={setPups} client={client}/>}/>
+        <Route path="/NewPupForm" element = {<NewPupForm addNewPup={addNewPup} client={client} />}/> 
+        <Route path="/dogs/:id" element = {<EditPupForm pupToEdit={pupToEdit} onUpdatePup={onUpdatePup} client={client} pups={pups} />}/>
         <Route path="/WalkersContainer" element = {<WalkersContainer walkers={walkers} />}/>
         <Route path="/Login" element = {<Login updateClient={updateClient} />}/>
         <Route path="/Signup" element = {<Signup updateClient={updateClient} />}/>
         <Route path="/Appointments" element = {<Appointments walkers={walkers} client={client} addNewAppointment={addNewAppointment} />}/>
-        <Route path="/client/:id" element = {<Account pups={pups} appointments={appointments} updateAppt={updateAppt} deleteAppt={deleteAppt} deleteClient={deleteClient} deleteDog={deleteDog} client={client} setClient={setClient} />}/>
+        <Route path="/client/:id" element = {<Account pups={pups} EditPup={onEditPup} appointments={appointments} updateAppt={updateAppt} deleteAppt={deleteAppt} deleteClient={deleteClient} deleteDog={deleteDog} client={client} setClient={setClient} />}/>
      </Routes>
     </div>
-  );
+  )
 }
 
 export default App;

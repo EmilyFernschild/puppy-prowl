@@ -4,7 +4,7 @@ import AccountAppoint from "./AccountAppoint";
 import { useNavigate } from "react-router-dom";
 import AccountDogs from "./AccountDogs";
 
-function Account({client, setClient, updateAppt, deleteAppt, appointments, deleteDog, pups, deleteClient}){
+function Account({client, setClient, updateAppt, deleteAppt, appointments, deleteDog, pups, deleteClient, EditPup}){
 
     const { id } = useParams();
     let navigate = useNavigate();
@@ -41,7 +41,7 @@ function Account({client, setClient, updateAppt, deleteAppt, appointments, delet
            <div>{client.address}</div>
            <div>{client.phone_number}</div>
            <ul>Dog(s): {client.dogs?.map((dog) => {
-               return <AccountDogs key={dog.id} dog={dog} deleteDog={deleteDog} />
+               return <AccountDogs key={dog.id} dog={dog} deleteDog={deleteDog} EditPup={EditPup}/>
            })}
            </ul>
            <button className='btnPrimary' onClick = {onClick}> New Dog? </button>

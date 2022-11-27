@@ -1,14 +1,23 @@
 import React, {useState} from 'react'
 import { useNavigate } from "react-router-dom";
 
+const initialState = {
+    newImg: "",
+    newName: "",
+    newGender: "",
+    newAge: "",
+    newSize: "",
+  };
+
 function NewPupForm({addNewPup, client}){
-    const [newImg, setNewImg] = useState("")
-    const [newName, setNewName] = useState("")
-    const [newGender, setNewGender] = useState("")
-    const [newAge, setNewAge] = useState("")
-    const [newSize, setNewSize] = useState("")
+    const [formData, setFormData] = useState(initialState);
     const [errors, setErrors] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((formData) => ({ ...formData, [name]: value }));
+    };
 
     let navigate = useNavigate();
 
@@ -16,11 +25,11 @@ function NewPupForm({addNewPup, client}){
         e.preventDefault();
         setIsLoading(true);
         const newPupObj = {
-            dog_image: newImg,
-            dog_name: newName,
-            gender: newGender,
-            age: newAge,
-            size: newSize
+            dog_image: formData.newImg,
+            dog_name: formData.newName,
+            gender: formData.newGender,
+            age: formData.newAge,
+            size: formData.newSize
         }
         fetch(`/dogs`,{
             method: 'POST',
@@ -47,8 +56,8 @@ function NewPupForm({addNewPup, client}){
                 <input 
                     type='text'
                     name='newName'
-                    value={newName}
-                    onChange={(e) => setNewName(e.target.value)}
+                    value={formData.newName}
+                    onChange={handleChange}
                 />
                 <br/>
                 <label>Dog Image:</label>
@@ -56,8 +65,8 @@ function NewPupForm({addNewPup, client}){
                 <input
                     type='text'
                     name='newImg'
-                    value={newImg}
-                    onChange={(e) => setNewImg(e.target.value)}
+                    value={formData.newImg}
+                    onChange={handleChange}
                 />
                 <br/>
                 <label>Gender:</label>
@@ -65,8 +74,8 @@ function NewPupForm({addNewPup, client}){
                 <input
                     type='text'
                     name='newGender'
-                    value={newGender}
-                    onChange={(e) => setNewGender(e.target.value)}
+                    value={formData.newGender}
+                    onChange={handleChange}
                 />
                 <br/>
                 <label>Age:</label>
@@ -74,8 +83,8 @@ function NewPupForm({addNewPup, client}){
                 <input
                     type='text'
                     name='newAge'
-                    value={newAge}
-                    onChange={(e) => setNewAge(e.target.value)}
+                    value={formData.newAge}
+                    onChange={handleChange}
                 />
                 <br/>
                 <label>Size:</label>
@@ -83,8 +92,8 @@ function NewPupForm({addNewPup, client}){
                 <input
                     type='text'
                     name='newSize'
-                    value={newSize}
-                    onChange={(e) => setNewSize(e.target.value)}
+                    value={formData.newSize}
+                    onChange={handleChange}
                 />
                 <br/>
                 <button className='btnPrimary' type='submit' value='Add New Dog!'>Add New Dog!</button>
