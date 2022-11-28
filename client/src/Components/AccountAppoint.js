@@ -1,8 +1,9 @@
 import { compareAsc } from 'date-fns';
 import moment from "moment";
+import { useState } from "react";
 
-function AccountAppoint({appointment, updateAppt, deleteAppt}){
-
+function AccountAppoint({appointment, updateAppt, expand, deleteAppt}){
+    
     // function handleUpdate(){
     //     fetch(`/appointments/${appointment.id}`, {
     //         method: "PATCH",
@@ -28,9 +29,10 @@ function AccountAppoint({appointment, updateAppt, deleteAppt}){
         
     return (
         <div>
-            <div>{fDates}</div>
+            {expand && 
+            <div>{fDates} <button onClick={handleDelete}>x</button></div>
+            }
             {/* <button onClick={handleUpdate}>Update</button> */}
-            <button onClick={handleDelete}>x</button>
         </div>
     )
 }

@@ -27,8 +27,8 @@ function NavBar({updateClient, client}){
             <br/>
             {client?<NavLink to = "/Appointments">Schedule a Walk!</NavLink>:null}
             <br/>
-            {client?<NavLink to = "/NewPupForm">New Pup Form</NavLink>:null}
-            <br/>
+            {/* {client?<NavLink to = "/NewPupForm">New Pup Form</NavLink>:null}
+            <br/> */}
             {client?<NavLink to = {`/client/${client.id}`}>Account</NavLink>:null}
             <br/>
             {!client?<NavLink to = "/Login">Login</NavLink>:

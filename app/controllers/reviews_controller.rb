@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show update destroy ]
-  skip_before_action :authorize
+  skip_before_action :authorize, only: :index
   # GET /reviews
   def index
     render json: Review.all, status: :ok
@@ -13,8 +13,8 @@ class ReviewsController < ApplicationController
 
   # POST /reviews
   def create
-    @review = Review.create!(review_params)
-    render json: @review, status: :created
+    review = @current_user.reviews.create!(review_params)
+    render json: review, status: :created
   end
 
   # PATCH/PUT /reviews/1

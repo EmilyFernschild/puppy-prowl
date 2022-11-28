@@ -7,12 +7,12 @@ function EditPupForm({ pupToEdit = {}, onUpdatePup, client }){
     const [isLoading, setIsLoading] = useState(false)
     const {newImg, newName, newGender, newAge, newSize } = formData;
 
-    useEffect(()=>{
-      fetch(`/dogs/${pupToEdit.id}`)
-        .then((res) => res.json())
-        .then((pup) => setFormData(pup));
-    }, [pupToEdit.id]);
-console.log(formData)
+    // useEffect(()=>{
+    //   fetch(`/dogs/${pupToEdit.id}`)
+    //     .then((res) => res.json())
+    //     .then((pup) => setFormData(pup));
+    // }, [pupToEdit.id]);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(formData => ({ ...formData, [name]: value }));
@@ -23,7 +23,7 @@ console.log(formData)
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsLoading(true);
-        const updtaedPupObj = {
+        const updatedPupObj = {
           dog_image: newImg,
           dog_name: newName,
           gender: newGender,
@@ -35,7 +35,7 @@ console.log(formData)
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(updtaedPupObj),
+          body: JSON.stringify(updatedPupObj),
         })
           .then((r) => {
             setIsLoading(false)
@@ -55,40 +55,50 @@ console.log(formData)
     <form onSubmit={handleSubmit} className="form" >
       <h3>Edit Puppy Info</h3>
       <label>Dog Name: </label>
+      <br/>
       <input
         type='text'
         name='newName'
-        value={newName}
+        defaultValue={pupToEdit.dog_name}
         onChange={handleChange}
       />
+      <br/>
       <label>Dog Image:</label>
+      <br/>
       <input
         type='text'
         name='newImg'
-        value={newImg}
+        defaultValue={pupToEdit.dog_image}
         onChange={handleChange}
       />
+      <br/>
       <label>Gender:</label>
+      <br/>
       <input
         type='text'
         name='newGender'
-        value={newGender}
+        defaultValue={pupToEdit.gender}
         onChange={handleChange}
       />
+      <br/>
       <label >Age:</label>
+      <br/>
       <input
         type='text'
         name='newAge'
-        value={newAge}
+        defaultValue={pupToEdit.age}
         onChange={handleChange}
       />
+      <br/>
       <label>Size:</label>
+      <br/>
       <input
         type='text'
         name='newSize'
-        value={newSize}
+        defaultValue={pupToEdit.size}
         onChange={handleChange}
       />
+      <br/>
       <button type="submit">Update Dog</button>
     </form>
       {errors? <div className='errors'>{errors}</div>:null} 

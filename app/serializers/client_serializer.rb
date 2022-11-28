@@ -3,4 +3,5 @@ class ClientSerializer < ActiveModel::Serializer
   has_many :dogs
   has_many :appointments
   has_many :walkers
+  has_many :reviews
 end

@@ -65,7 +65,7 @@ function Signup({updateClient}){
             <label> Email </label>
             <input
               className='form-container-input' 
-              type="text" 
+              type="email" 
               name="email" 
               id="email" 
               value={email} 
@@ -83,7 +83,7 @@ function Signup({updateClient}){
             <label> Phone Number </label>
             <input
               className='form-container-input' 
-              type="text" 
+              type="tel" 
               name="phoneNumber" 
               id="phoneNumber" 
               value={phoneNumber} 
@@ -101,7 +101,7 @@ function Signup({updateClient}){
             <label> Password </label>
             <input
               className='form-container-input' 
-              type="text" 
+              type="password" 
               name="password" 
               id="password" 
               value={password} 

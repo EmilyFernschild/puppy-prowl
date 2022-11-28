@@ -5,9 +5,13 @@ function Walker({walker}){
 
     let navigate = useNavigate();
 
-    function onClick(e){
+    function onBook(e){
         e.preventDefault()
         navigate(`/Appointments`)
+    }
+    function onReview(e){
+        e.preventDefault()
+        navigate(`/ReviewForm`)
     }
 
     return (
@@ -18,8 +22,8 @@ function Walker({walker}){
            <div>{`$${walker.rates}/hour`}</div>
            <div>{walker.location}</div>
            <ul>{walker.reviews?.map((review) => <Review key={review.id} review={review} />)}</ul>
-           {/* need to have a button to go to review form to create new review */}
-           <button onClick = {onClick} >Book A Walk!</button>
+           <button onClick = {onReview} >Add a Review! </button> 
+           <button onClick = {onBook} >Book a Walk! </button>
            <br/>
         </div>
     )

@@ -12,25 +12,28 @@ import Account from "./Account";
 import NewPupForm from "./NewPupForm";
 import EditPupForm from "./EditPupForm";
 import { useState, useEffect } from "react";
+import ReviewForm from "./ReviewForm";
 
 function App() {
   const [pups, setPups] = useState([]);
   const [pupToEdit, setPupToEdit] = useState([]);
   const [walkers, setWalkers] = useState([]);
   const [client, setClient] = useState(false);
+  const [clientToEdit, setClientToEdit] = useState([])
   const [appointments, setAppointments] = useState([]);
+  const [reviews, setReviews] = useState([])
 
   useEffect(() => {
     fetch("/dogs")
     .then((res) => res.json())
     .then((data) => setPups(data))
-  },[])
+  },[pupToEdit])
 
   useEffect(() => {
     fetch("/walkers")
     .then((res) => res.json())
     .then((data) => setWalkers(data))
-  },[])
+  },[reviews])
 
   useEffect(() => {
     fetch("/appointments")
@@ -52,7 +55,7 @@ function App() {
     setAppointments(prev => [...prev, newApptObj])
   }
 
-  function updateAppt(updatedApptObj){
+  function onUpdateAppt(updatedApptObj){
     const newApptObj = appointments?.map((appt)=> {
       if(appt.id === updatedApptObj.id){
         return (updatedApptObj)
@@ -73,6 +76,17 @@ function App() {
     setPupToEdit([]);
   };
 
+  function onUpdateClient (updatedClient){
+    setClient(client => {
+      if (client.id === updatedClient.id) {
+        return updatedClient;
+      } else {
+        return client;
+      }
+    })
+    setPupToEdit([])
+  };
+
   const onEditPup = (pupToEdit) => {
     setPupToEdit(pupToEdit);
   };
@@ -91,9 +105,17 @@ function App() {
     const updatedClients = client.id !== deletedClient.id
     setClient(updatedClients)
   }
+  function deleteReview(deletedReview){
+    const updatedReviews = reviews.filter((review)=> review.id !== deletedReview.id)
+    setReviews(updatedReviews)
+  }
 
   function addNewPup(newPupObj){
     setPups( prev => [...prev, newPupObj])
+  }
+
+  function addNewReview(newReviewObj){
+    setReviews( prev => [...prev, newReviewObj])
   }
 
   return (
@@ -105,10 +127,11 @@ function App() {
         <Route path="/NewPupForm" element = {<NewPupForm addNewPup={addNewPup} client={client} />}/> 
         <Route path="/dogs/:id" element = {<EditPupForm pupToEdit={pupToEdit} onUpdatePup={onUpdatePup} client={client} pups={pups} />}/>
         <Route path="/WalkersContainer" element = {<WalkersContainer walkers={walkers} />}/>
+        <Route path="/ReviewForm" element = {<ReviewForm client={client} walkers={walkers} addNewReview={addNewReview} />}/>
         <Route path="/Login" element = {<Login updateClient={updateClient} />}/>
         <Route path="/Signup" element = {<Signup updateClient={updateClient} />}/>
         <Route path="/Appointments" element = {<Appointments walkers={walkers} client={client} addNewAppointment={addNewAppointment} />}/>
-        <Route path="/client/:id" element = {<Account pups={pups} EditPup={onEditPup} appointments={appointments} updateAppt={updateAppt} deleteAppt={deleteAppt} deleteClient={deleteClient} deleteDog={deleteDog} client={client} setClient={setClient} />}/>
+        <Route path="/client/:id" element = {<Account pups={pups} EditPup={onEditPup} appointments={appointments} updateAppt={onUpdateAppt} deleteAppt={deleteAppt} deleteClient={deleteClient} deleteDog={deleteDog} deleteReview={deleteReview} client={client} setClient={setClient} clientToEdit={clientToEdit} reviews={reviews} onUpdateClient={onUpdateClient} />}/>
      </Routes>
     </div>
   )

@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 
-function AccountDogs({dog, deleteDog, EditPup}){
+function AccountDogs({dog, deleteDog, EditPup, expand}){
 
     let navigate = useNavigate();
 
@@ -20,9 +19,12 @@ function AccountDogs({dog, deleteDog, EditPup}){
 
     return (
         <div>
-           <>{dog.dog_name} </>
-            <button onClick={handleEdit}>Edit</button>
-            <button onClick={handleDelete}>x</button>
+            {expand && 
+                <>{dog.dog_name} 
+                <button onClick={handleEdit}>Edit</button>
+                <button onClick={handleDelete}>x</button>
+                </>
+            }
         </div>
     )
 }
