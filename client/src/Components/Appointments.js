@@ -77,7 +77,7 @@ function Appointments({walkers, client, addNewAppointment}){
             <DatePicker
                 placeholderText="Click to select a date"
                 selected={date}
-                onSelect={handleDateSelect}
+                // onSelect={handleDateSelect}
                 onChange={(date)=>{setDate(date)}}
                 name='date'
                 showTimeSelect

@@ -59,6 +59,7 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
             if(r.ok){
             r.json().then((updatedClient) => {
               onUpdateClient(updatedClient)
+              setIsForm(false)
             })
         } else {
             r.json().then((err) => setErrors(err.errors))
