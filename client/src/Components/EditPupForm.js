@@ -58,7 +58,7 @@ function EditPupForm({ pupToEdit = {}, onUpdatePup, client }){
       <br/>
       <input
         type='text'
-        name='newName'
+        name='dog_name'
         defaultValue={pupToEdit.dog_name}
         onChange={handleChange}
       />
@@ -67,7 +67,7 @@ function EditPupForm({ pupToEdit = {}, onUpdatePup, client }){
       <br/>
       <input
         type='text'
-        name='newImg'
+        name='dog_image'
         defaultValue={pupToEdit.dog_image}
         onChange={handleChange}
       />
@@ -76,7 +76,7 @@ function EditPupForm({ pupToEdit = {}, onUpdatePup, client }){
       <br/>
       <input
         type='text'
-        name='newGender'
+        name='gender'
         defaultValue={pupToEdit.gender}
         onChange={handleChange}
       />
@@ -85,7 +85,7 @@ function EditPupForm({ pupToEdit = {}, onUpdatePup, client }){
       <br/>
       <input
         type='text'
-        name='newAge'
+        name='age'
         defaultValue={pupToEdit.age}
         onChange={handleChange}
       />
@@ -94,7 +94,7 @@ function EditPupForm({ pupToEdit = {}, onUpdatePup, client }){
       <br/>
       <input
         type='text'
-        name='newSize'
+        name='size'
         defaultValue={pupToEdit.size}
         onChange={handleChange}
       />

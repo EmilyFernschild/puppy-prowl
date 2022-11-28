@@ -16,6 +16,7 @@ function Walker({walker}){
 
     return (
         <div>
+           <br />
            <div>{walker.walker_name}</div>
            <div>{walker.walker_email}</div>
            <div>{walker.services}</div>

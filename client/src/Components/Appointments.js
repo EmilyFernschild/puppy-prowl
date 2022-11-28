@@ -48,14 +48,14 @@ function Appointments({walkers, client, addNewAppointment}){
         })
     }
 
-    function handleDateSelect(){
+    // function handleDateSelect(){
 
-    }
+    // }
 
     return (
     <div> 
         <form onSubmit={handleSubmit}>
-            <br/>
+            <h3>Schedule a Walk!</h3>
             Welcome <label type="text" name="client_id" value={clientId} onChange={(e)=>{setClientId(e.target.value)}} >{client.client_name}</label>!
             <br/>
             <label>Dog Walker: </label>

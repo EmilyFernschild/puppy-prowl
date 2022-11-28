@@ -4,6 +4,8 @@ import AccountAppoint from "./AccountAppoint";
 import { useNavigate } from "react-router-dom";
 import AccountDogs from "./AccountDogs";
 import AccountReview from "./AccountReview";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 function Account({client, clientToEdit, reviews, onUpdateClient, setClient, updateAppt, deleteAppt, deleteReview, appointments, deleteDog, pups, deleteClient, EditPup}){
     const [accountFormData, setAccountFormData] = useState(clientToEdit)
@@ -74,11 +76,29 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
     }
 
     function handleDelete(){
-        fetch(`/clients/${client.id}`, {
-            method:"DELETE",
+        confirmAlert({
+            title: 'Delete Account',
+            message: 'Are you sure you want to delete?',
+            buttons: [
+            {
+            label: 'Yes',
+            onClick: () => {
+                fetch(`/clients/${client.id}`, {
+                    method:"DELETE",
+                });
+                fetch('/logout', {
+                    method: "DELETE"
+                });
+                deleteClient(client)
+                navigate(`/login`)
+            }},
+            {
+                label: 'No'
+            }
+          ]
         })
-        deleteClient(client)
     }
+    
 
     return (
         <div>
