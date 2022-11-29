@@ -5,10 +5,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import addDays from 'date-fns/addDays'
 import setHours from 'date-fns/setHours'
 import setMinutes from 'date-fns/setMinutes'
+// import moment from "moment";
 
-function Appointments({walkers, client, addNewAppointment}){
+function Appointments({walkers, client, addNewAppointment, appointments}){
     const [date, setDate] = useState("");
-    // const timeSlotCacheRef = useRef(new Map());
     const [dogWalkerId, setDogWalkerId] = useState("");
     const [clientId, setClientId] = useState(client.id);
     const [numberOfDogs, setNumberOfDogs] = useState(0);
@@ -17,10 +17,14 @@ function Appointments({walkers, client, addNewAppointment}){
 
     const filterPassedTime = (time) => {
         const currentDate = new Date();
-        const selectedDate = new Date(time);
-        return currentDate.getTime() < selectedDate.getTime();
+        const availableDate = new Date(time);
+        const workingHours = currentDate.getTime() < availableDate.getTime()  
+        // const bookedAppts = appointments.map((appt)=> moment(appt.appointment)._d.getTime())
+        // console.log(bookedAppts)
+        //   return booked === availableDate.getTime ? booked - workingHours : workingHours 
+        return workingHours
       };
-      
+          
     let navigate = useNavigate();
 
     function handleSubmit(e){

@@ -21,9 +21,11 @@ function NavBar({updateClient, client}){
       }
 
     return (
-        <div>
+        <div className="Nav">
+          <h2 className="Title">PuppyProwl</h2>
+          <div className="NavBar">
           {!menu?
-           <div onClick={() => setMenu(!menu)}>
+           <div className="hambuger" onClick={() => setMenu(!menu)}>
              <GiHamburgerMenu size={40}/> 
            </div>:
            <nav className="navigation">
@@ -42,6 +44,7 @@ function NavBar({updateClient, client}){
               <br/>
               <button onClick={() => setMenu(!menu)}>^</button>
             </nav>}
+            </div>
         </div>
     )
 }

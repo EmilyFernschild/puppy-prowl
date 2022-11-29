@@ -130,7 +130,7 @@ function App() {
         <Route path="/ReviewForm" element = {<ReviewForm client={client} walkers={walkers} addNewReview={addNewReview} />}/>
         <Route path="/Login" element = {<Login updateClient={updateClient} />}/>
         <Route path="/Signup" element = {<Signup updateClient={updateClient} />}/>
-        <Route path="/Appointments" element = {<Appointments walkers={walkers} client={client} addNewAppointment={addNewAppointment} />}/>
+        <Route path="/Appointments" element = {<Appointments walkers={walkers} client={client} addNewAppointment={addNewAppointment} appointments={appointments} />}/>
         <Route path="/client/:id" element = {<Account pups={pups} EditPup={onEditPup} appointments={appointments} updateAppt={onUpdateAppt} deleteAppt={deleteAppt} deleteClient={deleteClient} deleteDog={deleteDog} deleteReview={deleteReview} client={client} setClient={setClient} clientToEdit={clientToEdit} reviews={reviews} onUpdateClient={onUpdateClient} />}/>
      </Routes>
     </div>
