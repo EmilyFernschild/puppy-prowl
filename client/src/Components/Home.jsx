@@ -5,7 +5,7 @@ function Home(){
 
     return (
         <div>
-            <h2>Welcome to Puppy Prowl!</h2>
+            <h2 className='welcome'>Welcome to Puppy Prowl!</h2>
             <Carousel className='main-slide'>
                 <div>
                     <img alt="dog walking" src="https://images.unsplash.com/photo-1494947665470-20322015e3a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />

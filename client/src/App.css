@@ -28,7 +28,7 @@
 .carousel{
   width: 110%;
 }
-.navigation,
+/* .navigation,
 .hambuger{
   margin-left: 0px;
   text-align: right;
@@ -36,7 +36,7 @@
   padding-bottom: 0px;
   padding-top: 0px;
   margin-top: -35px;
-}
+} */
 .Title{
   padding: 0px;
   padding-top: 10px;
@@ -46,8 +46,11 @@
   font-size: 30px;
   letter-spacing: 0.2rem;
   font-weight: 50;
+  clear: right;
 }
-
+.welcome{
+  clear: right;
+}
 /* .Nav{
   padding: 0px;
   margin: 0px;
@@ -88,6 +91,8 @@ img {max-width:100%;}
 .pupcards{
   padding-inline: 10rem;
   padding-block: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .PupCardImg{
@@ -100,6 +105,7 @@ img {max-width:100%;}
   flex-direction: column;
   padding-inline: 10rem;
   width: 100rem;
+  align-content: center;
 }
 
 .card-text{

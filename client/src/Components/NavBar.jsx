@@ -93,6 +93,8 @@ export default NavBar;
 const Nav = styled.div`
   display: flex;
   justify-content:space-between;
+  float: right;
+  margin-right: 10px;
 `;
 
 const Menu = styled.div`

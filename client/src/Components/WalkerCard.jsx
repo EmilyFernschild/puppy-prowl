@@ -9,7 +9,7 @@ function Walker({walker}){
          <div>
         <Card >
            <br />
-           <Card.Body style={{ width: '90rem' }}>
+           <Card.Body className='card-body' style={{ width: '90rem' }}>
            <Card.Title className='card-text' id="card-title">{walker.walker_name}</Card.Title>
            <Card.Text className='card-text'>
             {walker.walker_email}
