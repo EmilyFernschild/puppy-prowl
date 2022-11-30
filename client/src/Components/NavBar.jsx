@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styled from 'styled-components'
 
 function NavBar({updateClient, client}){
     // const[isLoading, setIsLoading] = useState(false)
@@ -28,30 +29,85 @@ function NavBar({updateClient, client}){
     }
 
     return (
-        <div className="Nav">
-          <h1 className="Title" onClick={navHome}>PuppyProwl</h1>
-          <div className="NavBar">
+      <div>
+        <div>
+        <h1 className="Title" onClick={navHome}>PuppyProwl</h1>
+        </div>
+        <Nav >
+          <Menu >
           {!menu?
-           <div className="hambuger" onClick={() => setMenu(!menu)}>
+           <div onClick={() => setMenu(!menu)}>
              <GiHamburgerMenu size={40}/> 
            </div>:
-           <nav className="navigation">
-              {client?<NavLink to = "/PupsContainer">Puppies</NavLink>:null}
+           <ul >
+              {client?<li><NavLink to = "/PupsContainer">Puppies</NavLink></li>:null}
               <br/>
-              <NavLink to = "/WalkersContainer">Dog Walkers</NavLink>
+              <li><NavLink to = "/WalkersContainer">Dog Walkers</NavLink></li>
               <br/>
-              {client?<NavLink to = "/Appointments">Schedule a Walk!</NavLink>:null}
+              {client?<li><NavLink to = "/Appointments">Schedule a Walk!</NavLink></li>:null}
               <br/>
-              {client?<NavLink to = {`/client/${client.id}`}>Account</NavLink>:null}
+              {client?<li><NavLink to = {`/client/${client.id}`}>Account</NavLink></li>:null}
               <br/>
-              {!client?<NavLink to = "/Login">Login</NavLink>:
-              <NavLink to = "/" onClick={handleLogOut}>Logout</NavLink>}
+              {!client?<li><NavLink to = "/Login">Login</NavLink></li>:
+              <li><NavLink to = "/" onClick={handleLogOut}>Logout</NavLink></li>}
               <br/>
-              <button onClick={() => setMenu(!menu)}>^</button>
-            </nav>}
-            </div>
+              <li onClick={() => setMenu(!menu)}>^</li>
+            </ul>}
+            </Menu>
+        </Nav>
         </div>
     )
 }
 
 export default NavBar;
+
+// const Nav = styled.div`
+//   position: relative;
+//   display: inline-block;
+//   justify-content:space-between;
+//   align-content:right;
+// `;
+
+// const Menu = styled.div`
+//   display: inline-block;
+//   position: absolute;
+//   align-items: right;
+//   a{
+//     text-decoration: none;
+//     color:black;
+//     font-family: monospace;
+//     font-size: 16px;
+//     display: block;
+//     right: 0;
+//   }
+//   a:hover{
+//     color:green;
+//     display: block;
+//   }
+//   ul{
+//     list-style:none;
+//     background-color: white;
+//   }
+// `;
+
+const Nav = styled.div`
+  display: flex;
+  justify-content:space-between;
+`;
+
+const Menu = styled.div`
+  display: flex;
+  align-items: center;
+  a{
+    text-decoration: none;
+    color:black;
+    font-family:Arial;
+  }
+  a:hover{
+    color:green;
+  }
+  ul{
+    list-style:none;
+  }
+  
+`;

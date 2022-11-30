@@ -2,7 +2,7 @@
 function Pups({pup}){
     return (
     <div className="pup-card" style={{ margin: `50px`, display: `flex`, flexDirection: `row`, justifyContent: `center` }}>
-        <img src={pup.dog_image} alt="Puppy" style={{ height: `400px` }}/>
+        <img className="card-img" src={pup.dog_image} alt="Puppy" style={{ height: `400px` }}/>
         <div className="e-card-stacked">
             <div className="e-card-header">
                 <div className="e-card-header-caption">

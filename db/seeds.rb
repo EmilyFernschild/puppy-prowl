@@ -31,8 +31,8 @@ end
 
 puts "Seeding Walkers..."
 
-w1 = Walker.create(walker_name: Faker::Name.unique.name, walker_email: Faker::Internet.unique.email, location: "Monroe, CT", rates: rand(35..45), services: "Dog Walking, Dog Training")
-w2 = Walker.create(walker_name: Faker::Name.unique.name, walker_email: Faker::Internet.unique.email, location: "Monroe, CT", rates: rand(25..35), services: "Dog Walking")
+w1 = Walker.create(walker_name: "Joanna Windler", walker_email: Faker::Internet.unique.email, location: "Monroe, CT", rates: rand(35..45), services: "Dog Walking, Dog Training", walker_img:"https://images.unsplash.com/photo-1557495235-340eb888a9fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+w2 = Walker.create(walker_name: "Gisela Crooks", walker_email: Faker::Internet.unique.email, location: "Monroe, CT", rates: rand(25..35), services: "Dog Walking", walker_img:"https://images.unsplash.com/photo-1581527106934-25bc16f1d310?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
 
 puts "Seeding Appointments..."
  #=> appointment format maybe? "October 21, 2018 20:47"

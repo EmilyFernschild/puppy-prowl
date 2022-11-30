@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import addDays from 'date-fns/addDays'
 import setHours from 'date-fns/setHours'
 import setMinutes from 'date-fns/setMinutes'
-// import moment from "moment";
+import moment from "moment";
 
 function Appointments({walkers, client, addNewAppointment, appointments}){
     const [date, setDate] = useState("");
@@ -18,13 +18,12 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
     const filterPassedTime = (time) => {
         const currentDate = new Date();
         const availableDate = new Date(time);
-        const workingHours = currentDate.getTime() < availableDate.getTime()  
-        // const bookedAppts = appointments.map((appt)=> moment(appt.appointment)._d.getTime())
-        // console.log(bookedAppts)
-        //   return booked === availableDate.getTime ? booked - workingHours : workingHours 
-        return workingHours
+        const availableHours = currentDate.getTime() < availableDate.getTime() 
+        return availableHours
       };
-          
+
+    const excludedTimes = appointments.map((appt)=> moment(appt.appointment)._d.getTime())
+        
     let navigate = useNavigate();
 
     function handleSubmit(e){
@@ -52,10 +51,6 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
         })
     }
 
-    // function handleDateSelect(){
-
-    // }
-
     return (
     <div> 
         <form onSubmit={handleSubmit}>
@@ -81,7 +76,6 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
             <DatePicker
                 placeholderText="Click to select a date"
                 selected={date}
-                // onSelect={handleDateSelect}
                 onChange={(date)=>{setDate(date)}}
                 name='date'
                 showTimeSelect
@@ -97,6 +91,7 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
                 minTime={setHours(setMinutes(new Date(), 0), 8)}
                 maxTime={setHours(setMinutes(new Date(), 0), 17)}
                 filterTime={filterPassedTime}
+                excludeTimes={excludedTimes}
             />
             <br/>
             <button type="submit">Submit Dog Walk Appointment!</button>
