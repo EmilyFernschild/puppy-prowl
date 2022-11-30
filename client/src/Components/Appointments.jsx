@@ -14,14 +14,15 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
     const [numberOfDogs, setNumberOfDogs] = useState(0);
     const [groupWalks, setGroupWalks] = useState(false);
     const [errors, setErrors] = useState([]);
-
+    
     const filterPassedTime = (time) => {
         const currentDate = new Date();
         const availableDate = new Date(time);
         const availableHours = currentDate.getTime() < availableDate.getTime() 
         return availableHours
       };
-
+    //   console.log(dogWalker)
+// console.log(walkers.map(walker => walker.appointments))
     const excludedTimes = appointments.map((appt)=> moment(appt.appointment)._d.getTime())
         
     let navigate = useNavigate();

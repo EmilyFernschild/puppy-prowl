@@ -31,7 +31,7 @@ function NavBar({updateClient, client}){
     return (
       <div>
         <div>
-        <h1 className="Title" onClick={navHome}>PuppyProwl</h1>
+        <h1 className="Title" onClick={navHome}>{`Puppy🐾Prowl `}</h1>
         </div>
         <Nav >
           <Menu >
@@ -100,11 +100,12 @@ const Menu = styled.div`
   align-items: center;
   a{
     text-decoration: none;
-    color:black;
-    font-family:Arial;
+    color: #7DE186;
+    font-family: monospace;
+    font-size: 16px;
   }
   a:hover{
-    color:green;
+    color: orange;
   }
   ul{
     list-style:none;

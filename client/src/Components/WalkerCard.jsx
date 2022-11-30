@@ -1,31 +1,30 @@
-import { useNavigate } from "react-router-dom";
+
 import Review from "./Review";
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 function Walker({walker}){
 
-    let navigate = useNavigate();
-
-    function onBook(e){
-        e.preventDefault()
-        navigate(`/Appointments`)
-    }
-    function onReview(e){
-        e.preventDefault()
-        navigate(`/ReviewForm`)
-    }
-
-    return (
-        <div>
+    return(
+         <div>
+        <Card >
            <br />
-           <div>{walker.walker_name}</div>
-           <div>{walker.walker_email}</div>
-           <div>{walker.services}</div>
-           <div>{`$${walker.rates}/hour`}</div>
-           <div>{walker.location}</div>
-           <ul>{walker.reviews?.map((review) => <Review key={review.id} review={review} />)}</ul>
-           <button onClick = {onReview} >Add a Review! </button> 
-           <button onClick = {onBook} >Book a Walk! </button>
+           <Card.Body style={{ width: '90rem' }}>
+           <Card.Title className='card-text' id="card-title">{walker.walker_name}</Card.Title>
+           <Card.Text className='card-text'>
+            {walker.walker_email}
+            <br />
+            {walker.services}
+            <br />
+            {`$${walker.rates}/hour`}
+            <br />
+            {walker.location}
+            </Card.Text>
+            </Card.Body>
+           <ListGroup className="list-group-flush">{walker.reviews?.map((review) => <Review key={review.id} review={review} />)}</ListGroup>
+           
            <br/>
+        </Card>
         </div>
     )
 }
