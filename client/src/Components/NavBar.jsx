@@ -40,6 +40,7 @@ function NavBar({updateClient, client}){
              <GiHamburgerMenu size={40}/> 
            </div>:
            <ul >
+              <li id="up" onClick={() => setMenu(!menu)}>^</li>
               {client?<li><NavLink to = "/PupsContainer">Puppies</NavLink></li>:null}
               <br/>
               <li><NavLink to = "/WalkersContainer">Dog Walkers</NavLink></li>
@@ -50,8 +51,6 @@ function NavBar({updateClient, client}){
               <br/>
               {!client?<li><NavLink to = "/Login">Login</NavLink></li>:
               <li><NavLink to = "/" onClick={handleLogOut}>Logout</NavLink></li>}
-              <br/>
-              <li onClick={() => setMenu(!menu)}>^</li>
             </ul>}
             </Menu>
         </Nav>
@@ -61,45 +60,17 @@ function NavBar({updateClient, client}){
 
 export default NavBar;
 
-// const Nav = styled.div`
-//   position: relative;
-//   display: inline-block;
-//   justify-content:space-between;
-//   align-content:right;
-// `;
-
-// const Menu = styled.div`
-//   display: inline-block;
-//   position: absolute;
-//   align-items: right;
-//   a{
-//     text-decoration: none;
-//     color:black;
-//     font-family: monospace;
-//     font-size: 16px;
-//     display: block;
-//     right: 0;
-//   }
-//   a:hover{
-//     color:green;
-//     display: block;
-//   }
-//   ul{
-//     list-style:none;
-//     background-color: white;
-//   }
-// `;
-
 const Nav = styled.div`
   display: flex;
   justify-content:space-between;
   float: right;
-  margin-right: 10px;
+  margin-right: 210px;
+  margin-top: 60px;
 `;
 
 const Menu = styled.div`
   display: flex;
-  align-items: center;
+  align-items:center;
   a{
     text-decoration: none;
     color: #7DE186;
@@ -109,8 +80,26 @@ const Menu = styled.div`
   a:hover{
     color: orange;
   }
+  div,
   ul{
+    position: absolute;
     list-style:none;
+    text-align: left;
+    border: 0.5px solid;
+    padding: 0.5em;
+    padding-bottom: 1.5em;
+    padding-inline: 1em;
   }
-  
+  div{
+    border: none;
+    margin-left: 110px;
+    margin-top: -140px;
+  }
+  li{
+    position: relative;
+  }
+  #up{
+    text-align: right;
+    font-size: 20px;
+  }
 `;

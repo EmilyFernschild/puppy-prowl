@@ -83,10 +83,10 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
                 onChange={(date)=>{setDate(date)}}
                 name='date'
                 showTimeSelect
-                timeFormat="HH:mm"
+                timeFormat="h:mm aa"
                 timeIntervals={15}
                 timeCaption="time"
-                dateFormat="MMMM d, yyyy h:mm"
+                dateFormat="MMMM d, yyyy h:mm aa"
                 isClearable={true}
                 minDate={new Date()}
                 maxDate={addDays(new Date(), 14)}

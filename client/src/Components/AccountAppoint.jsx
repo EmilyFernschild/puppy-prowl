@@ -24,7 +24,7 @@ function AccountAppoint({appointment, updateAppt, expand, deleteAppt}){
         deleteAppt(appointment)
     }
     
-        const dates = [moment(appointment.appointment).utc().format('LLLL')] // need to convert to eastern standard time
+        const dates = [moment(appointment.appointment).utc('America/New_York').format('LLLL')] // need to convert to eastern standard time
         const fDates = dates.sort(compareAsc)
         
     return (

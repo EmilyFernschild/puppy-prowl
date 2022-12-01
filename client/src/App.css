@@ -1,32 +1,53 @@
 :root{
   --green: rgb(20, 58, 61);
   --lightgreen: #7DE186;
+  --orange: rgb(247,99,12);
 }
 
 .App {
   text-align: center;
 }
-
+.about{
+  padding: 0;
+  margin: auto;
+  color: whitesmoke
+}
+.about-p{
+  padding: 2rem;
+  padding-inline: 10rem;
+  color: whitesmoke
+}
 .main-slide{
   padding: 30px;
   padding-inline: 0px;
+  margin-top: 4rem;
+  clear: right;
 }
-
+.slide{
+  width: auto;
+  height: 40rem;
+  overflow: hidden;
+  clear: right;
+}
+.slide img{
+  margin-top: -14.8rem;
+  position: static;
+  clear: right;
+}
 .carousel .control-dots{
   padding: 30px;
   margin: 10px -10px;
 }
-.carousel .thumb{
+.carousel .thumbs{
   padding: 0px; 
   margin: 0px;
-  /* width: 50%; */
-  /* height: 50px; */
 }
 .carousel .thumbs-wrapper{
   margin: 0px;
 }
 .carousel{
   width: 110%;
+  clear: right;
 }
 /* .navigation,
 .hambuger{
@@ -43,12 +64,13 @@
   margin: 0px;
   margin-top: 10px;
   text-align: center;
-  font-size: 30px;
+  font-size: 36px;
   letter-spacing: 0.2rem;
-  font-weight: 50;
   clear: right;
 }
 .welcome{
+  font-size: 24px;
+  margin: 0;
   clear: right;
 }
 /* .Nav{
@@ -86,8 +108,15 @@ img {max-width:100%;}
   display: flex;
   flex-direction: row;
   align-items: center;
+  clear: right;
 }
-
+.walker-card{
+  background-color:rgba(181, 180, 180, 0.527);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.walkercards,
 .pupcards{
   padding-inline: 10rem;
   padding-block: 2rem;
@@ -102,8 +131,8 @@ img {max-width:100%;}
 }
 
 .card-body{
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   padding-inline: 10rem;
   width: 100rem;
   align-content: center;
@@ -119,15 +148,13 @@ img {max-width:100%;}
   font-size: 38px;
   letter-spacing: 0.2rem;
   font-weight: 50;
-  color:var(--lightgreen)
+  color:var(--lightgreen);
+  text-shadow: 3px 3px 0 var(--green);
 }
 .walker-img{
- width: 60rem;
- align-items: center;
- align-content: center;
-}
-.reviews{
-  color: whitesmoke;
-  padding: .2rem;
-  margin: .2rem;
+  display: flex;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60rem;
 }

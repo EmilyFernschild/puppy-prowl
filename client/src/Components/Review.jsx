@@ -9,7 +9,7 @@ function Review({review}){
     return (
         <div>
             <ListGroup className="list-group-flush">
-                <ListGroup.Item className='reviews'>{`"${review.comment}" -${reviewDates}`}</ListGroup.Item>
+                <ListGroup.Item className='card-text'>{`"${review.comment}" -${reviewDates}`}</ListGroup.Item>
             </ListGroup>
         </div>
     )

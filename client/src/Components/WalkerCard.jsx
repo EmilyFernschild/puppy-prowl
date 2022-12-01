@@ -6,8 +6,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 function Walker({walker}){
 
     return(
-         <div>
-        <Card >
+         <div className="walkercards">
+         <Card className="walker-card">
            <br />
            <Card.Body className='card-body' style={{ width: '90rem' }}>
            <Card.Title className='card-text' id="card-title">{walker.walker_name}</Card.Title>
