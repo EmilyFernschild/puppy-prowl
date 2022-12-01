@@ -17,7 +17,7 @@ c4 = Client.create(client_name: Faker::Name.unique.name, username: Faker::Intern
 puts "Seeding dogs..."
 
 d1 = Dog.create(
-        dog_image: "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=662&q=80",
+        dog_image: "https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80",
         dog_name: Faker::Creature::Dog.name,
         gender: Faker::Creature::Dog.gender,
         age: Faker::Creature::Dog.age, 
@@ -25,7 +25,7 @@ d1 = Dog.create(
         client_id: c4.id,
     )
 d2 = Dog.create(
-        dog_image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        dog_image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
         dog_name: Faker::Creature::Dog.name,
         gender: Faker::Creature::Dog.gender,
         age: Faker::Creature::Dog.age, 
@@ -33,7 +33,7 @@ d2 = Dog.create(
         client_id: c2.id,
     )
 d3 = Dog.create(
-        dog_image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        dog_image: "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
         dog_name: Faker::Creature::Dog.name,
         gender: Faker::Creature::Dog.gender,
         age: Faker::Creature::Dog.age, 
@@ -41,7 +41,7 @@ d3 = Dog.create(
         client_id: c1.id,
     )
 d4 = Dog.create(
-        dog_image: "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
+        dog_image: "https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80",
         dog_name: Faker::Creature::Dog.name,
         gender: Faker::Creature::Dog.gender,
         age: Faker::Creature::Dog.age, 
@@ -49,15 +49,15 @@ d4 = Dog.create(
         client_id: c2.id,
     )
 d5 = Dog.create(
-        dog_image: "https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
-        dog_name: Faker::Creature::Dog.name,
-        gender: Faker::Creature::Dog.gender,
+        dog_image: "https://images.unsplash.com/photo-1534551767192-78b8dd45b51b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+        dog_name: "Mia",
+        gender: "Female",
         age: Faker::Creature::Dog.age, 
         size: Faker::Creature::Dog.size,
         client_id: c4.id,
     )
 d6 = Dog.create(
-        dog_image: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        dog_image: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
         dog_name: Faker::Creature::Dog.name,
         gender: Faker::Creature::Dog.gender,
         age: Faker::Creature::Dog.age, 
@@ -65,7 +65,7 @@ d6 = Dog.create(
         client_id: c3.id,
     )
 d7 = Dog.create(
-        dog_image: "https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        dog_image: "https://images.unsplash.com/photo-1554692918-08fa0fdc9db3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
         dog_name: Faker::Creature::Dog.name,
         gender: Faker::Creature::Dog.gender,
         age: Faker::Creature::Dog.age, 
@@ -73,7 +73,7 @@ d7 = Dog.create(
         client_id: c2.id,
     )
 d8 = Dog.create(
-        dog_image: "https://images.unsplash.com/photo-1575859431774-2e57ed632664?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        dog_image: "https://images.unsplash.com/photo-1617129724623-84f1d2fd78f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
         dog_name: Faker::Creature::Dog.name,
         gender: Faker::Creature::Dog.gender,
         age: Faker::Creature::Dog.age, 
@@ -81,7 +81,7 @@ d8 = Dog.create(
         client_id: c1.id,
     )
 d9 = Dog.create(
-        dog_image: "https://images.unsplash.com/photo-1529429617124-95b109e86bb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        dog_image: "https://images.unsplash.com/photo-1560781854-d3d74a1ba2ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
         dog_name: Faker::Creature::Dog.name,
         gender: Faker::Creature::Dog.gender,
         age: Faker::Creature::Dog.age, 
@@ -89,7 +89,7 @@ d9 = Dog.create(
         client_id: c4.id,
     )
 d10 = Dog.create(
-        dog_image: "https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        dog_image: "https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
         dog_name: Faker::Creature::Dog.name,
         gender: Faker::Creature::Dog.gender,
         age: Faker::Creature::Dog.age, 
@@ -97,7 +97,7 @@ d10 = Dog.create(
         client_id: c1.id,
     )
 d11 = Dog.create(
-        dog_image: "https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        dog_image: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
         dog_name: Faker::Creature::Dog.name,
         gender: Faker::Creature::Dog.gender,
         age: Faker::Creature::Dog.age, 

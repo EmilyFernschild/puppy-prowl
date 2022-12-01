@@ -98,6 +98,7 @@ img {max-width:100%;}
 .PupCardImg{
  width: 38rem;
  height: 25rem;
+ min-width: 40rem;
 }
 
 .card-body{

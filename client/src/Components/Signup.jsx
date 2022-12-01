@@ -35,7 +35,7 @@ function Signup({updateClient}){
       if (r.ok) {
         r.json().then((client) => {
          updateClient(client)
-         navigate(`/`)
+         navigate(`/NewPupForm`)
     });
       } else {
         r.json().then((err) => setErrors(err.errors));
@@ -53,7 +53,7 @@ function Signup({updateClient}){
         <form
           className='submitForm'
           onSubmit={onSubmit}>
-            <label> Name </label>
+            <label> Name:* </label>
             <input
               className='form-container-input' 
               type="text" 
@@ -62,7 +62,7 @@ function Signup({updateClient}){
               value={name} 
               onChange={(e) => setName(e.target.value)} 
             />
-            <label> Email </label>
+            <label> Email:* </label>
             <input
               className='form-container-input' 
               type="email" 
@@ -71,7 +71,7 @@ function Signup({updateClient}){
               value={email} 
               onChange={(e) => setEmail(e.target.value)} 
             />
-            <label> Address </label>
+            <label> Address:* </label>
             <input
               className='form-container-input' 
               type="text" 
@@ -80,7 +80,7 @@ function Signup({updateClient}){
               value={address} 
               onChange={(e) => setAddress(e.target.value)} 
             />
-            <label> Phone Number </label>
+            <label> Phone Number: </label>
             <input
               className='form-container-input' 
               type="tel" 
@@ -89,7 +89,7 @@ function Signup({updateClient}){
               value={phoneNumber} 
               onChange={(e) => setPhoneNumber(e.target.value)} 
             />
-            <label> UserName </label>
+            <label> UserName:* </label>
             <input 
               className='form-container-input'
               type="text"
@@ -98,7 +98,7 @@ function Signup({updateClient}){
               value={username} 
               onChange={(e) => setUsername(e.target.value)} 
             />
-            <label> Password </label>
+            <label> Password:* </label>
             <input
               className='form-container-input' 
               type="password" 

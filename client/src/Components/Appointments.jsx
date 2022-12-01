@@ -6,6 +6,9 @@ import addDays from 'date-fns/addDays'
 import setHours from 'date-fns/setHours'
 import setMinutes from 'date-fns/setMinutes'
 import moment from "moment";
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 function Appointments({walkers, client, addNewAppointment, appointments}){
     const [date, setDate] = useState("");
@@ -21,8 +24,7 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
         const availableHours = currentDate.getTime() < availableDate.getTime() 
         return availableHours
       };
-    //   console.log(dogWalker)
-// console.log(walkers.map(walker => walker.appointments))
+
     const excludedTimes = appointments.map((appt)=> moment(appt.appointment)._d.getTime())
         
     let navigate = useNavigate();
@@ -54,26 +56,27 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
 
     return (
     <div> 
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <h3>Schedule a Walk!</h3>
-            Welcome <label type="text" name="client_id" value={clientId} onChange={(e)=>{setClientId(e.target.value)}} >{client.client_name}</label>!
-            <br/>
-            <label>Dog Walker: </label>
-                <select name="walker_id" value={dogWalkerId} onChange={(e)=>{setDogWalkerId(e.target.value)}} >
+            Welcome <Form.Label type="text" name="client_id" value={clientId} onChange={(e)=>{setClientId(e.target.value)}} >{client.client_name}</Form.Label>!
+            <FloatingLabel controlId="floatingSelect" label="Please pick which dog walker you prefer:">
+                <Form.Select aria-label="Floating label select example" name="walker_id" value={dogWalkerId} onChange={(e)=>{setDogWalkerId(e.target.value)}}>
                 <option value="">Select...</option>
                 {walkers.map((walker)=>{
                     return <option key={walker.id} value={walker.id}>{walker.walker_name}</option>
                 })}
-                </select>
-            <br/>
-            <label>How many dogs do you have?</label>
-            <input type='integer' name='numberOfDogs' value={numberOfDogs} onChange={(e)=>{setNumberOfDogs(e.target.value)}}/>
-            <br/>
-            <label>Are you okay with group walks?</label>
-            <input type='checkbox' name='groupWalks' value={groupWalks} onChange={(e)=>{setGroupWalks(e.target.value)}}/>
-            <br/>
-            <label>Please Select Date and Time: </label>
-            {/* <input type='date' name='date' value={date} onChange={(e)=>{setDate(e.target.value)}}/> */}
+                </Form.Select>
+            </FloatingLabel>
+            <Form.Group className="mb-3">
+                <Form.Label>How many dogs do you have?</Form.Label>
+                <Form.Control type='integer' name='numberOfDogs' value={numberOfDogs} onChange={(e)=>{setNumberOfDogs(e.target.value)}}/>
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label>Are you okay with group walks?</Form.Label>
+                <Form.Check type='switch' id="custom-switch" label="Check this switch!" name='groupWalks' value={groupWalks} onChange={(e)=>{setGroupWalks(e.target.value)}}/>
+            </Form.Group>
+            <Form.Group className="mb-3">
+            <Form.Label>Please select a date and time: </Form.Label>
             <DatePicker
                 placeholderText="Click to select a date"
                 selected={date}
@@ -94,9 +97,9 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
                 filterTime={filterPassedTime}
                 excludeTimes={excludedTimes}
             />
-            <br/>
-            <button type="submit">Submit Dog Walk Appointment!</button>
-        </form>
+            </Form.Group>
+            <Button variant="primary" type="submit">Submit Dog Walk Appointment!</Button>
+        </Form>
         {errors? <div className='errors'>{errors} </div>:null}
     </div>
     )
