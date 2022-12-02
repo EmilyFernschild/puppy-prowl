@@ -11,7 +11,7 @@ function Pups({pup}){
                 <Card.Text className='card-text'>{`Owner: ${name[0]}`}</Card.Text>
                 <Card.Text className='card-text'>{`Gender: ${pup.gender}`}</Card.Text>
                 <Card.Text className='card-text'>{`Age: ${pup.age}`}</Card.Text>
-                <Card.Text className='card-text'>{`I am ${pup.size} size for my breed!`}</Card.Text>
+                <Card.Text className='card-text'>{`My size is ${pup.size} for my breed!`}</Card.Text>
             </Card.Body>
         </Card>
         </div>

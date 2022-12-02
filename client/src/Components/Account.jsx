@@ -171,22 +171,28 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
            <br/>
            <button className="primary-btn" onClick = {onClick}> New Dog? </button>
            <br/>
-           <div>
+           <div className="links-container">
+                <div className="profile-btn-container">
                 <button className="secondary-btn" onClick={expandDogForm}>Dog(s)</button>
-                    {client.dogs?.map((dog) => {
-                    return <AccountDogs key={dog.id} dog={dog} expand={expandDog} deleteDog={deleteDog} EditPup={EditPup}/>
-                })}
-                <br/>
+                    <div className="profile-li">{client.dogs?.map((dog) => {
+                        return <AccountDogs key={dog.id} dog={dog} expand={expandDog} deleteDog={deleteDog} EditPup={EditPup}/>
+                    })}
+                    </div>
+                </div>
+                <div className="profile-btn-container">
                 <button className="secondary-btn" onClick={expandAppointForm}>Appointments</button>
-                {client.appointments?.map((appointment) => {
-                    return <AccountAppoint key={appointment.id}  expand={expandAppoint} appointment={appointment} updateAppt={updateAppt} deleteAppt={deleteAppt} appointments={appointments} />
-                })}
-                <br/>
+                    <div className="profile-li">{client.appointments?.map((appointment) => {
+                        return <AccountAppoint key={appointment.id}  expand={expandAppoint} appointment={appointment} updateAppt={updateAppt} deleteAppt={deleteAppt} appointments={appointments} />
+                    })}
+                    </div>
+                </div>
+                <div className="profile-btn-container">
                 <button className="secondary-btn" onClick={expandReviewForm}>Reviews</button>
-                {client.reviews?.map((review) =>{
+                    <div className="profile-li">{client.reviews?.map((review) =>{
                         return <AccountReview key={review.id} expand={expandReview} review={review} deleteReview={deleteReview} />
-                })}
-                <br/>
+                    })}
+                    </div>
+                </div>
            </div>
            <button className="delete-btn" onClick={handleDelete}>Delete Account</button>
         </div>

@@ -1,10 +1,7 @@
-
 import Review from "./Review";
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 
 function Walker({walker}){
-
     return(
          <div className="walkercards">
          <Card className="walker-card">
@@ -20,9 +17,8 @@ function Walker({walker}){
             <br />
             {walker.location}
             </Card.Text>
-            </Card.Body>
-           <ListGroup className="list-group-flush">{walker.reviews?.map((review) => <Review key={review.id} review={review} />)}</ListGroup>
-           
+            <Card.Text className="list-group-flush">{walker.reviews?.map((review) => <Review key={review.id} review={review} />)}</Card.Text>
+           </Card.Body>
            <br/>
         </Card>
         </div>

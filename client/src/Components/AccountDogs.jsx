@@ -18,7 +18,7 @@ function AccountDogs({dog, deleteDog, EditPup, expand}){
     }
 
     return (
-        <div>
+        <div className="profile-li">
             {expand && 
                 <h4 id="text">
                 {dog.dog_name}{" "}

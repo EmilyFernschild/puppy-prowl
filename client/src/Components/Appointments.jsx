@@ -25,7 +25,8 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
         return availableHours
       };
 
-    const excludedTimes = appointments.map((appt)=> moment(appt.appointment)._d.getTime())
+    const walkerAppts = appointments.filter((appt) => appt.walker_id === parseInt(dogWalkerId))
+    const excludedTimes = walkerAppts.map((appt)=> moment(appt.appointment)._d.getTime())
         
     let navigate = useNavigate();
 
@@ -56,9 +57,13 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
 
     return (
     <div className="form-container"> 
+        <div className="form-pic">
+            <img alt="form decor" src="https://images.unsplash.com/photo-1621942399851-cdcbdd190d1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGRvZyUyMHBhcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"></img>
+        </div>
+        <div className="form">
         <Form onSubmit={handleSubmit}>
-            <h3>Schedule a Walk!</h3>
-            Welcome <Form.Label type="text" name="client_id" value={clientId} onChange={(e)=>{setClientId(e.target.value)}} >{client.client_name}</Form.Label>!
+            <h2>Schedule a Walk!</h2>
+            <h3>Welcome <Form.Label type="text" name="client_id" value={clientId} onChange={(e)=>{setClientId(e.target.value)}} >{client.client_name}</Form.Label>!</h3>
             <FloatingLabel controlId="floatingSelect" label="Please pick which dog walker you prefer:">
                 <Form.Select aria-label="Floating label select example" name="walker_id" value={dogWalkerId} onChange={(e)=>{setDogWalkerId(e.target.value)}}>
                 <option value="">Select...</option>
@@ -100,7 +105,8 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
             </Form.Group>
             <Button variant="primary" className="primary-btn" type="submit">Submit Appointment!</Button>
         </Form>
-        {errors? <div className='errors'>{errors} </div>:null}
+            {errors? <div className='errors'>{errors} </div>:null}
+        </div>
     </div>
     )
 }

@@ -90,8 +90,7 @@
 
 * {box-sizing:border-box;}
 body {background:var(--green); font-family:monospace; color:#7DE186;}
-p {background:#06282C; padding:15px; font-size:14px; line-height:1.4;}
-body {font-family:monospace}
+p {background:#06282C; padding:15px; font-size:16px; line-height:1.4;}
 img {max-width:100%;}
 .wrap {max-width:1120px; margin:0 auto;}
 .container {column-count:3; column-gap:0; margin-top:15px;}
@@ -174,23 +173,57 @@ img {max-width:100%;}
 .not-found{
   padding-top: 6rem;
 }
+
+.form-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: auto;
+  width: 18rem;
+}
+.form-pic{
+width: 19rem;
+height: auto;
+margin-left: auto;
+overflow: hidden;
+}
+.form-pic img{
+  margin-right: -140px;
+  margin-left: -34px;
+}
+
 .profile-info{
   font-size: 16px;
 }
-.profile-more-info{
+
+.links-container{
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
-.profile-btn{
-  margin-inline: 13rem;
+.profile-btn-container{
+  margin-inline: 12rem;
+  max-width: 30%;
 }
 .profile-li{
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+}
+
+.profile-btn{
+  margin-inline: 13rem;
 }
 .nav-dropdown{
   background-color: var(--green);
 }
+.walker-btn,
 .primary-btn{
   padding-inline: 0.8rem;
   margin: 1rem;
@@ -203,7 +236,13 @@ img {max-width:100%;}
   box-shadow:inset 0px 1px 0px 0px var(--green);
   background:linear-gradient(rgb(35, 91, 83), rgba(41, 124, 85, 0.786));
 }
+.walker-btn{
+  margin-bottom: 8rem;
+  font-size: 17px;
+  font-weight: 100;
+}
 
+.walker-btn:hover,
 .primary-btn:hover {
   background: linear-gradient(rgba(41, 124, 85, 0.786), rgb(35, 91, 83));
 }

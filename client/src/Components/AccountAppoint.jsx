@@ -28,7 +28,7 @@ function AccountAppoint({appointment, updateAppt, expand, deleteAppt}){
         const fDates = dates.sort(compareAsc)
         
     return (
-        <div>
+        <div className="profile-li">
             {expand && 
             <div id="text" >{fDates} <button className="secondary-btn" onClick={handleDelete}>x</button></div>
             }
