@@ -13,6 +13,7 @@ import NewPupForm from "./NewPupForm";
 import EditPupForm from "./EditPupForm";
 import { useState, useEffect } from "react";
 import ReviewForm from "./ReviewForm";
+import NotFound from "./NotFound";
 
 function App() {
   const [pups, setPups] = useState([]);
@@ -132,6 +133,7 @@ function App() {
         <Route path="/Signup" element = {<Signup updateClient={updateClient} />}/>
         <Route path="/Appointments" element = {<Appointments walkers={walkers} client={client} addNewAppointment={addNewAppointment} appointments={appointments} />}/>
         <Route path="/client/:id" element = {<Account pups={pups} EditPup={onEditPup} appointments={appointments} updateAppt={onUpdateAppt} deleteAppt={deleteAppt} deleteClient={deleteClient} deleteDog={deleteDog} deleteReview={deleteReview} client={client} setClient={setClient} clientToEdit={clientToEdit} reviews={reviews} onUpdateClient={onUpdateClient} />}/>
+        <Route path="*" element={<NotFound />} />  
      </Routes>
     </div>
   )
