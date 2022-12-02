@@ -30,7 +30,7 @@ function AccountAppoint({appointment, updateAppt, expand, deleteAppt}){
     return (
         <div>
             {expand && 
-            <div>{fDates} <button onClick={handleDelete}>x</button></div>
+            <div id="text" >{fDates} <button className="secondary-btn" onClick={handleDelete}>x</button></div>
             }
             {/* <button onClick={handleUpdate}>Update</button> */}
         </div>

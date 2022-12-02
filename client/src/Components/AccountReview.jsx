@@ -10,9 +10,9 @@ function AccountReview({review, deleteReview, expand}){
     }
 
     return(
-        <div>
+        <div id="text">
             {expand && 
-            <li>{review.comment} <button onClick={handleDelete}>x</button> </li>
+            <li>{review.comment} <button className="secondary-btn" onClick={handleDelete}>x</button> </li>
             }
         </div>
     )

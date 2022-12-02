@@ -92,7 +92,7 @@ function EditPupForm({ pupToEdit = {}, onUpdatePup, client }){
         onChange={handleChange}
       />
       <br/>
-      <button type="submit">Update Dog</button>
+      <button className="primary-btn" type="submit">Update Dog</button>
     </form>
       {errors? <div className='errors'>{errors}</div>:null} 
       <div>{isLoading ? "Loading..." : null }</div>

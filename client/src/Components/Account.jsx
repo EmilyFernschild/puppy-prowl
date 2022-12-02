@@ -102,7 +102,8 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
 
     return (
         <div className="profile">
-           <h3> Profile:</h3>
+           <img className="logo" alt="profile logo" src="https://cdn-icons-png.flaticon.com/512/5494/5494947.png"/>
+           <h2> Profile:</h2>
            {!isForm ?
             <div>
                 <div>Name: {client.client_name}</div>
@@ -160,35 +161,34 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
                     defaultValue={client.password} 
                     onChange={handleChange} 
                 />
-                {/* <h4>Don't want to change password? Just leave it blank!</h4> */}
-                <button type="submit">Submit</button>
+                <br/>
+                <button className="primary-btn" type="submit">Submit</button>
             </form>
             {errors? <div className='errors'>{errors}</div>:null}
             </div>
             }
+           <button className="primary-btn" onClick={handleForm}>{!isForm? "Update Profile": "Close Update"}</button>
            <br/>
-            <button onClick={handleForm}>{!isForm? "Update Profile": "Close Update"}</button>
+           <button className="primary-btn" onClick = {onClick}> New Dog? </button>
            <br/>
-           <br/>
-           <button className='btnPrimary' onClick = {onClick}> New Dog? </button>
-           <br/>
-           <br/>
-           <button onClick={expandDogForm}>Dog(s)</button>
-            {client.dogs?.map((dog) => {
-               return <AccountDogs key={dog.id} dog={dog} expand={expandDog} deleteDog={deleteDog} EditPup={EditPup}/>
-           })}
-           <br/>
-           <button onClick={expandAppointForm}>Appointments</button>
-           {client.appointments?.map((appointment) => {
-               return <AccountAppoint key={appointment.id}  expand={expandAppoint} appointment={appointment} updateAppt={updateAppt} deleteAppt={deleteAppt} appointments={appointments} />
-           })}
-           <br/>
-           <button onClick={expandReviewForm}>Reviews</button>
-           {client.reviews?.map((review) =>{
-                return <AccountReview key={review.id} expand={expandReview} review={review} deleteReview={deleteReview} />
-           })}
-           <br/>
-           <button onClick={handleDelete}>Delete Account</button>
+           <div>
+                <button className="secondary-btn" onClick={expandDogForm}>Dog(s)</button>
+                    {client.dogs?.map((dog) => {
+                    return <AccountDogs key={dog.id} dog={dog} expand={expandDog} deleteDog={deleteDog} EditPup={EditPup}/>
+                })}
+                <br/>
+                <button className="secondary-btn" onClick={expandAppointForm}>Appointments</button>
+                {client.appointments?.map((appointment) => {
+                    return <AccountAppoint key={appointment.id}  expand={expandAppoint} appointment={appointment} updateAppt={updateAppt} deleteAppt={deleteAppt} appointments={appointments} />
+                })}
+                <br/>
+                <button className="secondary-btn" onClick={expandReviewForm}>Reviews</button>
+                {client.reviews?.map((review) =>{
+                        return <AccountReview key={review.id} expand={expandReview} review={review} deleteReview={deleteReview} />
+                })}
+                <br/>
+           </div>
+           <button className="delete-btn" onClick={handleDelete}>Delete Account</button>
         </div>
     )
 }

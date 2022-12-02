@@ -2,6 +2,7 @@
   --green: rgb(20, 58, 61);
   --lightgreen: #7DE186;
   --orange: rgb(247,99,12);
+  --red: rgb(243, 41, 0);
 }
 
 .App {
@@ -37,17 +38,21 @@
 .carousel .control-dots{
   padding: 30px;
   margin: 10px -10px;
+  position: static;
 }
 .carousel .thumbs{
   padding: 0px; 
   margin: 0px;
+  position: static;
 }
 .carousel .thumbs-wrapper{
   margin: 0px;
+  position: static;
 }
 .carousel{
   width: 110%;
   clear: right;
+  position: static;
 }
 /* .navigation,
 .hambuger{
@@ -64,9 +69,10 @@
   margin: 0px;
   margin-top: 10px;
   text-align: center;
-  font-size: 36px;
+  font-size: 38px;
   letter-spacing: 0.2rem;
   clear: right;
+  text-shadow: 3px 2px 0px rgb(5, 27, 29);
 }
 .welcome{
   font-size: 24px;
@@ -78,6 +84,9 @@
   margin: 0px;
   background-color:
 } */
+.logo{
+  width: 5%;
+}
 
 * {box-sizing:border-box;}
 body {background:var(--green); font-family:monospace; color:#7DE186;}
@@ -180,4 +189,58 @@ img {max-width:100%;}
 }
 .nav-dropdown{
   background-color: var(--green);
+}
+.primary-btn{
+  padding-inline: 0.8rem;
+  margin: 1rem;
+  height: 35px;
+  border-width:1px;
+  color:#fff;
+  border-color: var(--green);
+  font-weight:bold;
+  font-family: monospace;
+  box-shadow:inset 0px 1px 0px 0px var(--green);
+  background:linear-gradient(rgb(35, 91, 83), rgba(41, 124, 85, 0.786));
+}
+
+.primary-btn:hover {
+  background: linear-gradient(rgba(41, 124, 85, 0.786), rgb(35, 91, 83));
+}
+
+.secondary-btn{
+  font-size: 14px;
+  padding-inline: 0.8rem;
+  margin: 1rem;
+  height: 35px;
+  /* border-width:1px; */
+  color: var(--lightgreen);
+  border-bottom: 0.5px solid var(--lightgreen);
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  font-weight:bold;
+  font-family: monospace;
+  /* /* box-shadow:inset 0px 1px 0px 0px var(--green); */
+  background: transparent;
+}
+
+#text{
+  color:whitesmoke
+}
+
+.delete-btn{
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-inline: 0.8rem;
+  margin: 1rem;
+  height: 35px;
+  color: var(--orange);
+  border-bottom: 0.5px solid var(--orange);
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  font-weight: 600;
+  font-family: monospace;
+  background: transparent;
 }

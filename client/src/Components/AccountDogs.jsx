@@ -20,10 +20,10 @@ function AccountDogs({dog, deleteDog, EditPup, expand}){
     return (
         <div>
             {expand && 
-                <h4>
+                <h4 id="text">
                 {dog.dog_name}{" "}
-                <button onClick={handleEdit}>Edit</button>
-                <button onClick={handleDelete}>x</button>
+                <button className="secondary-btn" onClick={handleEdit}>Edit</button>
+                <button className="secondary-btn" onClick={handleDelete}>x</button>
                 </h4>
             }
         </div>

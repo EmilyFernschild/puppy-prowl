@@ -69,7 +69,7 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
             </FloatingLabel>
             <Form.Group className="mb-3">
                 <Form.Label>How many dogs do you have?</Form.Label>
-                <Form.Control type='integer' name='numberOfDogs' value={numberOfDogs} onChange={(e)=>{setNumberOfDogs(e.target.value)}}/>
+                <Form.Control type='number' name='numberOfDogs' value={numberOfDogs} onChange={(e)=>{setNumberOfDogs(e.target.value)}}/>
             </Form.Group>
             <Form.Group className="mb-3">
                 <Form.Label>Are you okay with group walks?</Form.Label>
@@ -98,7 +98,7 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
                 excludeTimes={excludedTimes}
             />
             </Form.Group>
-            <Button variant="primary" type="submit">Submit Dog Walk Appointment!</Button>
+            <Button variant="primary" className="primary-btn" type="submit">Submit Appointment!</Button>
         </Form>
         {errors? <div className='errors'>{errors} </div>:null}
     </div>

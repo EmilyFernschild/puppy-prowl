@@ -52,7 +52,7 @@ function ReviewForm({client, walkers, addNewReview}){
                 <br />
                 <textarea name="comment" value={reviewComment} onChange={(e)=>{setReviewComment(e.target.value)}} /> 
                 <br />
-                <button className='btnPrimary' type='submit' value='Add Review!'>Add Review!</button>
+                <button className="primary-btn" type='submit' value='Add Review!'>Add Review!</button>
             </form>
             {errors? <div className='errors'>{errors} </div>:null}
         </div>

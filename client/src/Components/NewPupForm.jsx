@@ -59,6 +59,7 @@ function NewPupForm({addNewPup, client}){
                     type='text'
                     name='newName'
                     value={formData.newName}
+                    placeholder="e.g. Bailey"
                     onChange={handleChange}
                 />
                 <br/>
@@ -68,6 +69,7 @@ function NewPupForm({addNewPup, client}){
                     type='text'
                     name='newImg'
                     value={formData.newImg}
+                    placeholder="e.g. https://image"
                     onChange={handleChange}
                 />
                 <br/>
@@ -77,6 +79,7 @@ function NewPupForm({addNewPup, client}){
                     type='text'
                     name='newGender'
                     value={formData.newGender}
+                    placeholder="e.g. Female"
                     onChange={handleChange}
                 />
                 <br/>
@@ -86,6 +89,7 @@ function NewPupForm({addNewPup, client}){
                     type='text'
                     name='newAge'
                     value={formData.newAge}
+                    placeholder="e.g. Puppy"
                     onChange={handleChange}
                 />
                 <br/>
@@ -95,10 +99,11 @@ function NewPupForm({addNewPup, client}){
                     type='text'
                     name='newSize'
                     value={formData.newSize}
+                    placeholder="e.g. Small"
                     onChange={handleChange}
                 />
                 <br/>
-                <button className='btnPrimary' type='submit' value='Add New Dog!'>Add New Dog!</button>
+                <button className="primary-btn" type='submit' value='Add New Dog!'>Add New Dog!</button>
                 <br/>
             </form>
             {errors? <div className='errors'>{errors}</div>:null} 
