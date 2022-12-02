@@ -39,7 +39,7 @@ function NavBar({updateClient, client}){
            <div onClick={() => setMenu(!menu)}>
              <GiHamburgerMenu size={40}/> 
            </div>:
-           <ul >
+           <ul className="nav-dropdown">
               <li id="up" onClick={() => setMenu(!menu)}>^</li>
               {client?<li><NavLink to = "/PupsContainer">Puppies</NavLink></li>:null}
               <br/>
@@ -54,7 +54,7 @@ function NavBar({updateClient, client}){
             </ul>}
             </Menu>
         </Nav>
-        </div>
+      </div>
     )
 }
 

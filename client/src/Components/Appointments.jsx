@@ -89,7 +89,7 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
                 dateFormat="MMMM d, yyyy h:mm aa"
                 isClearable={true}
                 minDate={new Date()}
-                maxDate={addDays(new Date(), 14)}
+                maxDate={addDays(new Date(), 91)}
                 withPortal
                 showMonthDropdown
                 minTime={setHours(setMinutes(new Date(), 0), 8)}

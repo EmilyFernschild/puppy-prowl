@@ -160,7 +160,7 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
                     defaultValue={client.password} 
                     onChange={handleChange} 
                 />
-                <br/>
+                {/* <h4>Don't want to change password? Just leave it blank!</h4> */}
                 <button type="submit">Submit</button>
             </form>
             {errors? <div className='errors'>{errors}</div>:null}
