@@ -49,7 +49,7 @@ function NewPupForm({addNewPup, client}){
     }
 
     return (
-        <div className='form-container'>
+        <div className='.new-pup-form'>
             <form onSubmit={handleSubmit}>
                 <h3>Add Puppy Info</h3>
                 <h5>If this is your first time signing in please add your dog(s)!</h5>

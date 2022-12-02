@@ -55,7 +55,7 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
     }
 
     return (
-    <div> 
+    <div className="form-container"> 
         <Form onSubmit={handleSubmit}>
             <h3>Schedule a Walk!</h3>
             Welcome <Form.Label type="text" name="client_id" value={clientId} onChange={(e)=>{setClientId(e.target.value)}} >{client.client_name}</Form.Label>!

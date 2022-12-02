@@ -101,7 +101,7 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
     
 
     return (
-        <div>
+        <div className="profile">
            <h3> Profile:</h3>
            {!isForm ?
             <div>

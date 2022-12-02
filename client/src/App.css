@@ -158,3 +158,23 @@ img {max-width:100%;}
   margin-right: auto;
   width: 60rem;
 }
+.form-container,
+.new-pup-form,
+.profile,
+.form-parent{
+  padding-top: 6rem;
+}
+.profile-info{
+  font-size: 16px;
+}
+.profile-more-info{
+  display: flex;
+  flex-direction: row;
+}
+.profile-btn{
+  margin-inline: 13rem;
+}
+.profile-li{
+  display: flex;
+  flex-direction: column;
+}

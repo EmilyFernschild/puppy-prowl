@@ -23,19 +23,12 @@ function EditPupForm({ pupToEdit = {}, onUpdatePup, client }){
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsLoading(true);
-        const updatedPupObj = {
-          dog_image: newImg,
-          dog_name: newName,
-          gender: newGender,
-          age: newAge,
-          size: newSize
-      }
         fetch(`/dogs/${pupToEdit.id}`,{
           method: "PATCH",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(updatedPupObj),
+          body: JSON.stringify(formData),
         })
           .then((r) => {
             setIsLoading(false)
@@ -51,7 +44,7 @@ function EditPupForm({ pupToEdit = {}, onUpdatePup, client }){
       };
 
     return(
-    <div>
+    <div className='new-pup-form'>
     <form onSubmit={handleSubmit} className="form" >
       <h3>Edit Puppy Info</h3>
       <label>Dog Name: </label>
