@@ -9,10 +9,10 @@ Review.destroy_all
 puts "🌱 Seeding data..."
 
 puts "Seeding clients..."
-c1 = Client.create(client_name: Faker::Name.unique.name, username: Faker::Internet.unique.username, password_digest: "Password1", email: Faker::Internet.unique.email, address: "#{Faker::Address.street_address}, Monroe, CT", phone_number: "#{Faker::PhoneNumber.cell_phone}")
-c2 = Client.create(client_name: Faker::Name.unique.name, username: Faker::Internet.unique.username, password_digest: "Password2", email: Faker::Internet.unique.email, address: "#{Faker::Address.street_address}, Monroe, CT", phone_number: "#{Faker::PhoneNumber.cell_phone}")
-c3 = Client.create(client_name: Faker::Name.unique.name, username: Faker::Internet.unique.username, password_digest: "Password3", email: Faker::Internet.unique.email, address: "#{Faker::Address.street_address}, Monroe, CT", phone_number: "#{Faker::PhoneNumber.cell_phone}")
-c4 = Client.create(client_name: Faker::Name.unique.name, username: Faker::Internet.unique.username, password_digest: "Password4", email: Faker::Internet.unique.email, address: "#{Faker::Address.street_address}, Trumbull, CT", phone_number: "#{Faker::PhoneNumber.cell_phone}")
+c1 = Client.create(client_name: Faker::Name.unique.name_with_middle, username: Faker::Internet.unique.username, password_digest: "Password1", email: Faker::Internet.unique.email, address: "#{Faker::Address.street_address}, Monroe, CT", phone_number: "#{Faker::PhoneNumber.cell_phone}")
+c2 = Client.create(client_name: Faker::Name.unique.name_with_middle, username: Faker::Internet.unique.username, password_digest: "Password2", email: Faker::Internet.unique.email, address: "#{Faker::Address.street_address}, Monroe, CT", phone_number: "#{Faker::PhoneNumber.cell_phone}")
+c3 = Client.create(client_name: Faker::Name.unique.name_with_middle, username: Faker::Internet.unique.username, password_digest: "Password3", email: Faker::Internet.unique.email, address: "#{Faker::Address.street_address}, Monroe, CT", phone_number: "#{Faker::PhoneNumber.cell_phone}")
+c4 = Client.create(client_name: Faker::Name.unique.name_with_middle, username: Faker::Internet.unique.username, password_digest: "Password4", email: Faker::Internet.unique.email, address: "#{Faker::Address.street_address}, Trumbull, CT", phone_number: "#{Faker::PhoneNumber.cell_phone}")
 
 puts "Seeding dogs..."
 
