@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Form from 'react-bootstrap/Form';
 
 function Login({updateClient}){
     const [username, setUsername] = useState("");
@@ -39,35 +40,40 @@ function Login({updateClient}){
     }
 
     return (
+        <div>
         <div className='form-container'>
-            <form 
+            <Form 
                 className='loginForm'
                 onSubmit={onSubmit}>
-                <label> UserName </label>
-                <input
+                <Form.Label> Username </Form.Label>
+                <Form.Control
                   className='form-container-input' 
                   type="text"
                   name="username" 
                   id="username" 
+                  placeholder="Username"
                   value={username} 
                   onChange={(e) => setUsername(e.target.value)} 
                 />
-                <label> Password </label>
-                <input
+                <Form.Label> Password </Form.Label>
+                <Form.Control
                   className='form-container-input' 
                   type="password" 
                   name="password" 
                   id="password" 
+                  placeholder="Password"
                   value={password} 
                   onChange={(e) => setPassword(e.target.value)} 
                 />
-                <button className='btnPrimary' type='submit' value='Log in!'>Log In!</button>
-                
-            </form>
+                <button className='primary-btn' type='submit' value='Log in!'>Log In!</button>
+            </Form>
+            </div>
             {errors? <div className='errors'>{errors}</div>:null} 
             <div>{isLoading ? "Loading..." : null }</div>
-            <div> Are You a New user? </div>
-                <button className='btnPrimary' onClick = {onClick}> Sign up!</button>
+            <div> Are You a New user? 
+                <br/>
+                <button className='primary-btn' onClick = {onClick}> Sign up!</button>
+            </div>
         </div>
     )
 }

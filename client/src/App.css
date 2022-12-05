@@ -205,6 +205,14 @@ img {max-width:100%;}
 .form-floating{
   color:rgb(59, 59, 59);
 }
+.review-container,
+.account-form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  clear: right;
+}
 .form-container{
   display: flex;
   flex-direction: row;
@@ -250,7 +258,6 @@ overflow: hidden;
   padding: 0.45rem;
   border-radius: 0.5rem;
 }
-
 .profile-info{
   font-size: 16px;
 }

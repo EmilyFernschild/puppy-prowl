@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate } from "react-router-dom";
+import Form from 'react-bootstrap/Form';
 
 const initialState = {
     newImg: "",
@@ -47,65 +48,56 @@ function NewPupForm({addNewPup, client}){
             }
         })
     }
-
     return (
         <div className='new-pup-form'>
-            <form onSubmit={handleSubmit}>
+            <div className='form-container'>
+            <Form onSubmit={handleSubmit}>
                 <h2>Add Puppy Info</h2>
-                <h5>First time signing in? Please add your dog(s) information!</h5>
-                <label>Dog Name: </label>
-                <br/>
-                <input 
+                <div>First time signing in?</div>
+                <div>Please add your dog's information!</div>
+                <Form.Label>Dog Name: </Form.Label>
+                <Form.Control 
                     type='text'
                     name='newName'
                     value={formData.newName}
                     placeholder="e.g. Bailey"
                     onChange={handleChange}
                 />
-                <br/>
-                <label>Dog Image:</label>
-                <br/>
-                <input
+                <Form.Label>Dog Image:</Form.Label>
+                <Form.Control
                     type='text'
                     name='newImg'
                     value={formData.newImg}
                     placeholder="e.g. https://image"
                     onChange={handleChange}
                 />
-                <br/>
-                <label>Gender:</label>
-                <br/>
-                <input
+                <Form.Label>Gender:</Form.Label>
+                <Form.Control
                     type='text'
                     name='newGender'
                     value={formData.newGender}
                     placeholder="e.g. Female"
                     onChange={handleChange}
                 />
-                <br/>
-                <label>Age:</label>
-                <br/>
-                <input
+                <Form.Label>Age:</Form.Label>
+                <Form.Control
                     type='text'
                     name='newAge'
                     value={formData.newAge}
                     placeholder="e.g. Puppy"
                     onChange={handleChange}
                 />
-                <br/>
-                <label>Size:</label>
-                <br/>
-                <input
+                <Form.Label>Size:</Form.Label>
+                <Form.Control
                     type='text'
                     name='newSize'
                     value={formData.newSize}
                     placeholder="e.g. Small"
                     onChange={handleChange}
                 />
-                <br/>
                 <button className="primary-btn" type='submit' value='Add New Dog!'>Add New Dog!</button>
-                <br/>
-            </form>
+            </Form>
+            </div>
             {errors? <div className='errors'>{errors}</div>:null} 
             <div>{isLoading ? "Loading..." : null }</div>
         </div>

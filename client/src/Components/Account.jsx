@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import AccountDogs from "./AccountDogs";
 import AccountReview from "./AccountReview";
 import { confirmAlert } from 'react-confirm-alert';
+import Form from 'react-bootstrap/Form';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
 function Account({client, clientToEdit, reviews, onUpdateClient, setClient, updateAppt, deleteAppt, deleteReview, appointments, deleteDog, pups, deleteClient, EditPup}){
@@ -102,58 +103,52 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
                 <div>Phone Number: {client.phone_number}</div> 
                 <div>Username: {client.username}</div>
             </div>:
-            <div>
-            <form onSubmit={handleSubmit}>
-                <label>Name: </label>
-                <input 
+            <div className='account-form-container'>
+            <Form onSubmit={handleSubmit}>
+                <Form.Label>Name: </Form.Label>
+                <Form.Control 
                     type="text" 
                     name="name" 
                     defaultValue={client.client_name} 
                     onChange={handleChange} 
                 />
-                <br/>
-                <label>Email: </label>
-                <input 
+                <Form.Label>Email: </Form.Label>
+                <Form.Control 
                     type="text" 
                     name="email" 
                     defaultValue={client.email} 
                     onChange={handleChange} 
                 />
-                <br/>
-                <label>Address: </label>
-                <input 
+                <Form.Label>Address: </Form.Label>
+                <Form.Control 
                     type="text" 
                     name="address" 
                     defaultValue={client.address} 
                     onChange={handleChange} 
                 />
-                <br/>
-                <label>Phone Number: </label>
-                <input 
+                <Form.Label>Phone Number: </Form.Label>
+                <Form.Control
                     type="text" 
                     name="phone_number" 
                     defaultValue={client.phone_number} 
                     onChange={handleChange} 
                 />
-                <br/>
-                <label>Username: </label>
-                <input 
+                <Form.Label>Username: </Form.Label>
+                <Form.Control 
                     type="text" 
                     name="username" 
                     defaultValue={client.username} 
                     onChange={handleChange} 
                 />
-                <br/>
-                <label>Password: </label>
-                <input 
+                <Form.Label>Password: </Form.Label>
+                <Form.Control
                     type="password" 
                     name="password" 
                     defaultValue={client.password} 
                     onChange={handleChange} 
                 />
-                <br/>
                 <button className="primary-btn" type="submit">Submit</button>
-            </form>
+            </Form>
             {errors? <div className='errors'>{errors}</div>:null}
             </div>
             }

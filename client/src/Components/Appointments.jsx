@@ -8,7 +8,7 @@ import setMinutes from 'date-fns/setMinutes'
 import moment from "moment";
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+
 
 function Appointments({walkers, client, addNewAppointment, appointments}){
     const [date, setDate] = useState("");
