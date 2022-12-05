@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 function Walker({walker}){
     return(
          <div className="walkercards">
-         <Card className="walker-card">
+         <div className="walker-card">
            <br />
            <Card.Body className='card-body' style={{ width: '90rem' }}>
            <Card.Title className='card-text' id="card-title">{walker.walker_name}</Card.Title>
@@ -17,10 +17,10 @@ function Walker({walker}){
             <br />
             {walker.location}
             </Card.Text>
-            <Card.Text className="list-group-flush">{walker.reviews?.map((review) => <Review key={review.id} review={review} />)}</Card.Text>
+            <div className='review-card'>{walker.reviews?.map((review) => <Review key={review.id} review={review} />)}</div>
            </Card.Body>
            <br/>
-        </Card>
+        </div>
         </div>
     )
 }

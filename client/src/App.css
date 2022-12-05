@@ -1,12 +1,17 @@
 :root{
+  --darkgreen: rgb(6,40,44);
   --green: rgb(20, 58, 61);
   --lightgreen: #7DE186;
   --orange: rgb(247,99,12);
   --red: rgb(243, 41, 0);
+  background-color: var(--green);
 }
 
 .App {
   text-align: center;
+  background-color: var(--green);
+  color: var(--lightgreen);
+  font-family:monospace
 }
 .about{
   padding: 0;
@@ -132,6 +137,16 @@ img {max-width:100%;}
   margin-right: auto;
 }
 
+.review-card{
+  background-color: var(--darkgreen);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: 10rem;
+  padding: 1rem;
+  padding-top: 0.06rem;
+}
+
 .PupCardImg{
  width: 38rem;
  height: 25rem;
@@ -148,6 +163,8 @@ img {max-width:100%;}
 
 .card-text{
   margin-block: 0.5rem;
+  margin-inline: 10rem;
+  min-width: 10rem;
   font-size: 16px;
   color: whitesmoke
 }
@@ -164,8 +181,10 @@ img {max-width:100%;}
   clear: both;
   margin-left: auto;
   margin-right: auto;
-  width: 60rem;
+  width: 60%;
+  height: 60%;
 }
+.review-container,
 .form-container,
 .new-pup-form,
 .profile,
@@ -174,21 +193,50 @@ img {max-width:100%;}
   padding-top: 6rem;
 }
 
+#custom-switch{
+  float: right;
+  text-align: left;
+  margin-right: 3rem;
+  width: 15%;
+}
+.form-check-label{
+  float: left;
+}
+.form-floating{
+  color:rgb(59, 59, 59);
+}
 .form-container{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  clear: right;
+}
+.form-border{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-right: 8rem;
+  padding-left: 5rem;
+  padding-block: 2rem;
+  background-color:rgba(181, 180, 180, 0.4);
+  clear: right;
+}
+.form-control{
+  text-align: center;
 }
 .form{
   display: flex;
   flex-direction: column;
   text-align: center;
   margin-right: auto;
-  width: 18rem;
+  width: 20rem;
+  padding: 0.5rem;
+  background-color:var(--darkgreen);
 }
 .form-pic{
-width: 19rem;
+width: 20.04rem;
 height: auto;
 margin-left: auto;
 overflow: hidden;
@@ -196,6 +244,11 @@ overflow: hidden;
 .form-pic img{
   margin-right: -140px;
   margin-left: -34px;
+}
+.datepicker{
+  width: 16rem;
+  padding: 0.45rem;
+  border-radius: 0.5rem;
 }
 
 .profile-info{

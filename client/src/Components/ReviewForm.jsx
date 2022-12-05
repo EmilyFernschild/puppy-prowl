@@ -35,10 +35,11 @@ function ReviewForm({client, walkers, addNewReview}){
     }
 
     return(
-        <div className='form-container'>
+        <div className='review-container'>
             <h2>Add a Review</h2>
+            <br/>
             <form onSubmit={handleSubmit}>
-                <h3>Welcome <label type="text" name="client_id" value={clientId} onChange={(e)=>{setClientId(e.target.value)}} >{client.client_name}</label>!</h3>
+                <h4>Welcome <label type="text" name="client_id" value={clientId} onChange={(e)=>{setClientId(e.target.value)}} >{client.client_name}</label>!</h4>
                 <label>Select Dog Walker: </label>
                 <br />
                 <select name="walker_id" value={walkerId} onChange={(e)=>{setWalkerId(e.target.value)}} >

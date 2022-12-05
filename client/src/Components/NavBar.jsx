@@ -42,13 +42,9 @@ function NavBar({updateClient, client}){
            <ul className="nav-dropdown">
               <li id="up" onClick={() => setMenu(!menu)}>^</li>
               {client?<li><NavLink to = "/PupsContainer">Puppies</NavLink></li>:null}
-              <br/>
               <li><NavLink to = "/WalkersContainer">Dog Walkers</NavLink></li>
-              <br/>
               {client?<li><NavLink to = "/Appointments">Schedule a Walk!</NavLink></li>:null}
-              <br/>
               {client?<li><NavLink to = {`/client/${client.id}`}>Account</NavLink></li>:null}
-              <br/>
               {!client?<li><NavLink to = "/Login">Login</NavLink></li>:
               <li><NavLink to = "/" onClick={handleLogOut}>Logout</NavLink></li>}
             </ul>}
@@ -76,6 +72,7 @@ const Menu = styled.div`
     color: #7DE186;
     font-family: monospace;
     font-size: 16px;
+    line-height: 2em;
   }
   a:hover{
     color: orange;

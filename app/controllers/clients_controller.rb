@@ -17,7 +17,7 @@ class ClientsController < ApplicationController
 
    # for autologin feat
    def user
-    render json: @current_user
+    render json: @current_user, status: :ok
   end
 
   # POST /clients

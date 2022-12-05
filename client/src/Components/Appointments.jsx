@@ -57,6 +57,7 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
 
     return (
     <div className="form-container"> 
+        <div className="form-border">
         <div className="form-pic">
             <img alt="form decor" src="https://images.unsplash.com/photo-1621942399851-cdcbdd190d1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGRvZyUyMHBhcmt8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"></img>
         </div>
@@ -64,7 +65,7 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
         <Form onSubmit={handleSubmit}>
             <h2>Schedule a Walk!</h2>
             <h3>Welcome <Form.Label type="text" name="client_id" value={clientId} onChange={(e)=>{setClientId(e.target.value)}} >{client.client_name}</Form.Label>!</h3>
-            <FloatingLabel controlId="floatingSelect" label="Please pick which dog walker you prefer:">
+            <FloatingLabel controlId="floatingSelect" label="Please pick a Dog Walker:">
                 <Form.Select aria-label="Floating label select example" name="walker_id" value={dogWalkerId} onChange={(e)=>{setDogWalkerId(e.target.value)}}>
                 <option value="">Select...</option>
                 {walkers.map((walker)=>{
@@ -83,6 +84,7 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
             <Form.Group className="mb-3">
             <Form.Label>Please select a date and time: </Form.Label>
             <DatePicker
+                className="datepicker"
                 placeholderText="Click to select a date"
                 selected={date}
                 onChange={(date)=>{setDate(date)}}
@@ -103,9 +105,10 @@ function Appointments({walkers, client, addNewAppointment, appointments}){
                 excludeTimes={excludedTimes}
             />
             </Form.Group>
-            <Button variant="primary" className="primary-btn" type="submit">Submit Appointment!</Button>
+            <button variant="primary" className="primary-btn" type="submit">Submit Appointment!</button>
         </Form>
             {errors? <div className='errors'>{errors} </div>:null}
+        </div>
         </div>
     </div>
     )

@@ -127,7 +127,7 @@ function App() {
         <Route path="/PupsContainer" element = {<PupsContainer pups={pups} setPups={setPups} client={client}/>}/>
         <Route path="/NewPupForm" element = {<NewPupForm addNewPup={addNewPup} client={client} />}/> 
         <Route path="/dogs/:id" element = {<EditPupForm pupToEdit={pupToEdit} onUpdatePup={onUpdatePup} client={client} pups={pups} />}/>
-        <Route path="/WalkersContainer" element = {<WalkersContainer walkers={walkers} />}/>
+        <Route path="/WalkersContainer" element = {<WalkersContainer walkers={walkers} client={client} />}/>
         <Route path="/ReviewForm" element = {<ReviewForm client={client} walkers={walkers} addNewReview={addNewReview} />}/>
         <Route path="/Login" element = {<Login updateClient={updateClient} />}/>
         <Route path="/Signup" element = {<Signup updateClient={updateClient} />}/>
