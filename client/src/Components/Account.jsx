@@ -15,16 +15,6 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
     const [isForm, setIsForm] = useState(false)
     const [errors, setErrors] = useState([])
 
-    function expandDogForm(){
-        setExpandDog(prev => !prev)
-    }
-    function expandAppointForm(){
-        setExpandAppoint(prev => !prev)
-    }
-    function expandReviewForm(){
-        setExpandReview(prev => !prev)
-    }
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setAccountFormData(accountFormData => ({ ...accountFormData, [name]: value }));
@@ -173,21 +163,21 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
            <br/>
            <div className="links-container">
                 <div className="profile-btn-container">
-                <button className="secondary-btn" onClick={expandDogForm}>Dog(s)</button>
+                <button className="secondary-btn" onClick={()=> setExpandDog(!expandDog)}>Dog(s)</button>
                     <div className="profile-li">{client.dogs?.map((dog) => {
                         return <AccountDogs key={dog.id} dog={dog} expand={expandDog} deleteDog={deleteDog} EditPup={EditPup}/>
                     })}
                     </div>
                 </div>
                 <div className="profile-btn-container">
-                <button className="secondary-btn" onClick={expandAppointForm}>Appointments</button>
+                <button className="secondary-btn" onClick={()=> setExpandAppoint(!expandAppoint)}>Appointments</button>
                     <div className="profile-li">{client.appointments?.map((appointment) => {
                         return <AccountAppoint key={appointment.id}  expand={expandAppoint} appointment={appointment} updateAppt={updateAppt} deleteAppt={deleteAppt} appointments={appointments} />
                     })}
                     </div>
                 </div>
                 <div className="profile-btn-container">
-                <button className="secondary-btn" onClick={expandReviewForm}>Reviews</button>
+                <button className="secondary-btn" onClick={()=> setExpandReview(!expandReview)}>Reviews</button>
                     <div className="profile-li">{client.reviews?.map((review) =>{
                         return <AccountReview key={review.id} expand={expandReview} review={review} deleteReview={deleteReview} />
                     })}
