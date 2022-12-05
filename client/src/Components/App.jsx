@@ -28,7 +28,7 @@ function App() {
     fetch("/dogs")
     .then((res) => res.json())
     .then((data) => setPups(data))
-  },[pupToEdit])
+  },[pupToEdit, client])
 
   useEffect(() => {
     fetch("/walkers")
