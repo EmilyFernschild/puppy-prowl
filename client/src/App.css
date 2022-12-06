@@ -165,8 +165,14 @@ img {max-width:100%;}
   margin-inline: 10rem;
   padding: 1rem;
   padding-top: 0.06rem;
+  height: 140px;
+  overflow-y: scroll;
 }
-
+.review-form{
+  background-color: var(--darkgreen);
+  padding: 1rem;
+  padding-inline: 4rem;
+}
 .PupCardImg{
  width: 38rem;
  height: 25rem;
