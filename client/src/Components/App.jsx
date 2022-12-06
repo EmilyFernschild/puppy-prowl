@@ -14,6 +14,7 @@ import EditPupForm from "./EditPupForm";
 import { useState, useEffect } from "react";
 import ReviewForm from "./ReviewForm";
 import NotFound from "./NotFound";
+import Footer from "./Footer";
 
 function App() {
   const [pups, setPups] = useState([]);
@@ -54,16 +55,6 @@ function App() {
 
   function addNewAppointment(newApptObj){
     setAppointments(prev => [...prev, newApptObj])
-  }
-
-  function onUpdateAppt(updatedApptObj){
-    const newApptObj = appointments?.map((appt)=> {
-      if(appt.id === updatedApptObj.id){
-        return (updatedApptObj)
-      } else
-      return appt
-    })
-    setAppointments(newApptObj)
   }
   
   function onUpdatePup (updatedPup){
@@ -132,9 +123,10 @@ function App() {
         <Route path="/Login" element = {<Login updateClient={updateClient} />}/>
         <Route path="/Signup" element = {<Signup updateClient={updateClient} />}/>
         <Route path="/Appointments" element = {<Appointments walkers={walkers} client={client} addNewAppointment={addNewAppointment} appointments={appointments} />}/>
-        <Route path="/client/:id" element = {<Account pups={pups} EditPup={onEditPup} appointments={appointments} updateAppt={onUpdateAppt} deleteAppt={deleteAppt} deleteClient={deleteClient} deleteDog={deleteDog} deleteReview={deleteReview} client={client} setClient={setClient} clientToEdit={clientToEdit} reviews={reviews} onUpdateClient={onUpdateClient} />}/>
+        <Route path="/client/:id" element = {<Account pups={pups} EditPup={onEditPup} appointments={appointments} deleteAppt={deleteAppt} deleteClient={deleteClient} deleteDog={deleteDog} deleteReview={deleteReview} client={client} setClient={setClient} clientToEdit={clientToEdit} reviews={reviews} onUpdateClient={onUpdateClient} />}/>
         <Route path="*" element={<NotFound />} />  
      </Routes>
+     <Footer />
     </div>
   )
 }

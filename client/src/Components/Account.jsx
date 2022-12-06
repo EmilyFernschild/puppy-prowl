@@ -8,7 +8,7 @@ import { confirmAlert } from 'react-confirm-alert';
 import Form from 'react-bootstrap/Form';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
-function Account({client, clientToEdit, reviews, onUpdateClient, setClient, updateAppt, deleteAppt, deleteReview, appointments, deleteDog, pups, deleteClient, EditPup}){
+function Account({client, clientToEdit, reviews, onUpdateClient, setClient, deleteAppt, deleteReview, appointments, deleteDog, pups, deleteClient, EditPup}){
     const [accountFormData, setAccountFormData] = useState(clientToEdit)
     const [expandDog, setExpandDog] = useState(false)
     const [expandAppoint, setExpandAppoint] = useState(false)
@@ -179,7 +179,7 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
                 <div className="profile-btn-container">
                 <button className="secondary-btn" onClick={()=> setExpandAppoint(!expandAppoint)}>Appointments</button>
                     <div className="profile-li">{client.appointments?.map((appointment) => {
-                        return <AccountAppoint key={appointment.id}  expand={expandAppoint} appointment={appointment} updateAppt={updateAppt} deleteAppt={deleteAppt} appointments={appointments} />
+                        return <AccountAppoint key={appointment.id}  expand={expandAppoint} appointment={appointment} deleteAppt={deleteAppt} appointments={appointments} />
                     })}
                     </div>
                 </div>

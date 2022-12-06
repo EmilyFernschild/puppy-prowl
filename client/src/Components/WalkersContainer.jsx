@@ -1,5 +1,4 @@
 import WalkerCard from "./WalkerCard";
-import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -21,7 +20,10 @@ function WalkersContainer({walkers, client}){
         e.preventDefault()
         navigate(`/ReviewForm`)
     }
-   
+    function onClick(e){
+        e.preventDefault()
+        navigate(`/login`)
+      }
     return (
         <div>
             <img className="walker-img" alt="Us holding dogs!" src="https://images.unsplash.com/photo-1603682232379-f6d3cc557c11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"/>
@@ -35,7 +37,10 @@ function WalkersContainer({walkers, client}){
                 </Modal.Header>
                 <Modal.Body>Please sign up or login!</Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button variant="outline-success" onClick={onClick}>
+                    Login
+                </Button>
+                <Button variant="outline-secondary" onClick={handleClose}>
                     Close
                 </Button>
                 </Modal.Footer>
