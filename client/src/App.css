@@ -11,7 +11,8 @@
   text-align: center;
   background-color: var(--green);
   color: var(--lightgreen);
-  font-family:monospace
+  font-family:monospace;
+  font-size: 18px;
 }
 .about{
   padding: 0;
@@ -26,12 +27,12 @@
 .main-slide{
   padding: 30px;
   padding-inline: 0px;
-  margin-top: 4rem;
+  margin-top: 3.4rem;
   clear: right;
 }
 .slide{
   width: auto;
-  height: 40rem;
+  height: 45rem;
   overflow: hidden;
   clear: right;
 }
@@ -80,9 +81,12 @@
   text-shadow: 3px 2px 0px rgb(5, 27, 29);
 }
 .welcome{
-  font-size: 24px;
+  font-size: 26px;
   margin: 0;
   clear: right;
+}
+.about-title{
+  font-size: 26px;
 }
 /* .Nav{
   padding: 0px;
@@ -95,7 +99,7 @@
 
 * {box-sizing:border-box;}
 body {background:var(--green); font-family:monospace; color:#7DE186;}
-p {background:#06282C; padding:15px; font-size:16px; line-height:1.4;}
+p {background:#06282C; padding:15px; font-size:18px; line-height:1.4;}
 img {max-width:100%;}
 .wrap {max-width:1120px; margin:0 auto;}
 .container {column-count:3; column-gap:0; margin-top:15px;}
@@ -114,7 +118,7 @@ img {max-width:100%;}
   text-align: center;
   align-content: center;
   padding-top: 177.5px;
-  font-size: 16px;
+  font-size: 18px;
 }
 .pup-card{
   background-color:rgba(181, 180, 180, 0.527);
@@ -164,17 +168,26 @@ img {max-width:100%;}
 .card-text{
   margin-block: 0.5rem;
   margin-inline: 10rem;
-  min-width: 10rem;
-  font-size: 16px;
-  color: whitesmoke
+  min-width: 12rem;
+  font-size: 18px;
+  color: whitesmoke;
+  letter-spacing: 1px;
 }
-
+#review-card-text{
+  letter-spacing: normal;
+  margin-inline: 1rem;
+}
+.review-title,
 #card-title{
   font-size: 38px;
   letter-spacing: 0.2rem;
   font-weight: 50;
   color:var(--lightgreen);
   text-shadow: 3px 3px 0 var(--green);
+}
+.review-title{
+  font-size: 20px;
+  text-shadow: none;
 }
 .walker-img{
   display: flex;
@@ -190,7 +203,7 @@ img {max-width:100%;}
 .profile,
 .form-parent, 
 .not-found{
-  padding-top: 6rem;
+  padding-top: 5rem;
 }
 
 #custom-switch{
@@ -243,6 +256,17 @@ img {max-width:100%;}
   padding: 0.5rem;
   background-color:var(--darkgreen);
 }
+.account-form, 
+.account-nonform{
+  background-color:var(--darkgreen);
+  justify-content: center;
+  align-content: center;
+  padding: 0.8rem;
+  padding-inline: 1rem;
+}
+.account-form{
+  padding-inline: 3rem;
+}
 .form-pic{
 width: 20.04rem;
 height: auto;
@@ -259,24 +283,25 @@ overflow: hidden;
   border-radius: 0.5rem;
 }
 .profile-info{
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .links-container{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  clear: both;
 }
 .profile-btn-container{
-  margin-inline: 12rem;
-  max-width: 30%;
+  margin-inline: 8rem;
+  clear: both;
 }
 .profile-li{
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-wrap: nowrap;
+  clear: both;
 }
-
 .profile-btn{
   margin-inline: 13rem;
 }
@@ -285,6 +310,7 @@ overflow: hidden;
 }
 .walker-btn,
 .primary-btn{
+  font-size: 18px;
   padding-inline: 0.8rem;
   margin: 1rem;
   height: 35px;
@@ -298,7 +324,7 @@ overflow: hidden;
 }
 .walker-btn{
   margin-bottom: 8rem;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 100;
 }
 
@@ -306,30 +332,46 @@ overflow: hidden;
 .primary-btn:hover {
   background: linear-gradient(rgba(41, 124, 85, 0.786), rgb(35, 91, 83));
 }
-
+.profile-txt,
 .secondary-btn{
-  font-size: 14px;
+  font-size: 18px;
   padding-inline: 0.8rem;
   margin: 1rem;
   height: 35px;
-  /* border-width:1px; */
   color: var(--lightgreen);
   border-bottom: 0.5px solid var(--lightgreen);
   border-top: transparent;
   border-left: transparent;
   border-right: transparent;
-  font-weight:bold;
   font-family: monospace;
-  /* /* box-shadow:inset 0px 1px 0px 0px var(--green); */
   background: transparent;
 }
+.profile-txt{
+  margin-inline: auto;
+  height: 1.5rem;
+  border-bottom: 0.5px solid whitesmoke;
+  width: fit-content;
+  align-items: center;
+  margin-block: 0.8rem;
+}
 
-#text{
-  color:whitesmoke
+#edit-btn,
+#x-btn{
+  padding: 0.5rem;
+  line-height: 2rem;
+  font-size: 18px;
+  font-weight: 50;
+  margin-inline: 0.4rem;
+}
+.profile-txt,
+.text{
+  color:whitesmoke; 
+  font-size: 18px;
+  line-height: 1;
 }
 
 .delete-btn{
-  font-size: 16px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
   padding-inline: 0.8rem;
@@ -343,4 +385,5 @@ overflow: hidden;
   font-weight: 600;
   font-family: monospace;
   background: transparent;
+  margin-top: 8rem;
 }

@@ -20,11 +20,13 @@ function AccountDogs({dog, deleteDog, EditPup, expand}){
     return (
         <div className="profile-li">
             {expand && 
-                <h4 id="text">
-                {dog.dog_name}{" "}
-                <button className="secondary-btn" onClick={handleEdit}>Edit</button>
-                <button className="secondary-btn" onClick={handleDelete}>x</button>
-                </h4>
+                <div className="profile-text">
+                    <h4 className="text">
+                    {dog.dog_name}{" "}
+                    <button className="secondary-btn" id="edit-btn" onClick={handleEdit}>Edit</button>
+                    <button className="secondary-btn" id="x-btn" onClick={handleDelete}>x</button>
+                    </h4>
+                </div>
             }
         </div>
     )

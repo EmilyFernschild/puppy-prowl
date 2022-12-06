@@ -96,15 +96,27 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
            <img className="logo" alt="profile logo" src="https://cdn-icons-png.flaticon.com/512/5494/5494947.png"/>
            <h2> Profile:</h2>
            {!isForm ?
-            <div>
-                <div>Name: {client.client_name}</div>
-                <div>Email: {client.email}</div>
-                <div>Address: {client.address}</div>
-                <div>Phone Number: {client.phone_number}</div> 
-                <div>Username: {client.username}</div>
+            <div className='account-form-container'>
+                <div className="account-nonform">
+                <div>Name: 
+                    <div className="profile-txt">{client.client_name}</div>
+                </div>
+                <div>Email: 
+                    <div className="profile-txt">{client.email}</div>
+                </div>
+                <div>Address: 
+                    <div className="profile-txt">{client.address}</div>
+                </div>
+                <div>Phone Number: 
+                    <div className="profile-txt">{client.phone_number}</div>
+                </div> 
+                <div>Username: 
+                    <div className="profile-txt">{client.username}</div>
+                </div>
+                </div>
             </div>:
             <div className='account-form-container'>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} className="account-form">
                 <Form.Label>Name: </Form.Label>
                 <Form.Control 
                     type="text" 
@@ -158,7 +170,7 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, upda
            <br/>
            <div className="links-container">
                 <div className="profile-btn-container">
-                <button className="secondary-btn" onClick={()=> setExpandDog(!expandDog)}>Dog(s)</button>
+                <button className="secondary-btn" onClick={()=> setExpandDog(!expandDog)}>Dogs</button>
                     <div className="profile-li">{client.dogs?.map((dog) => {
                         return <AccountDogs key={dog.id} dog={dog} expand={expandDog} deleteDog={deleteDog} EditPup={EditPup}/>
                     })}

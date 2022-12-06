@@ -7,7 +7,7 @@ function Review({review}){
    
     return (
         <div>
-            <div className='card-text'>{`"${review.comment}" -${reviewDates}`}</div>
+            <div className='card-text' id="review-card-text">{`"${review.comment}" -${reviewDates}`}</div>
         </div>
     )
 }

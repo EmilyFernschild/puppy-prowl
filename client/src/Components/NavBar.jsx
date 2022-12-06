@@ -71,8 +71,8 @@ const Menu = styled.div`
     text-decoration: none;
     color: #7DE186;
     font-family: monospace;
-    font-size: 16px;
-    line-height: 2em;
+    font-size: 18px;
+    line-height: 1.8em;
   }
   a:hover{
     color: orange;
@@ -84,7 +84,7 @@ const Menu = styled.div`
     text-align: left;
     border: 0.5px solid;
     padding: 0.5em;
-    padding-bottom: 1.5em;
+    padding-bottom: 1em;
     padding-inline: 1em;
   }
   div{
@@ -97,6 +97,7 @@ const Menu = styled.div`
   }
   #up{
     text-align: right;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
   }
 `;

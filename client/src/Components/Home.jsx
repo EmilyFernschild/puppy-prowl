@@ -19,10 +19,10 @@ function Home(){
                 </div>
             </Carousel>
             <div className='about'> 
-                <h2>About Puppy Prowl:</h2>
+                <h2 className='about-title'>About Puppy Prowl:</h2>
                 <p className='about-p'>Puppy Prowl started in 2016 when founder Joanna Windler branched off on her own from being a dog walker on Rover. Joanna started Puppy Prowl with just a few neighborhood clients and from there quickly grew her dog walking business through word of mouth. Soon the business grew so much that Gianna Crooks joined the team in 2019! Throughout the years of dog walking Joanna decided to take classes on dog training, specifically leash training! Gianna is currently taking classes to learn training too!
                     <br/>
-                    If you are looking for affordable dog walking or dog training in the Monroe Connecticut area, please sign up and make your next dog walking appointment today! We look forward to meeting you and your dog(s)!
+                    If you are looking for affordable dog walking or dog training in the Monroe Connecticut area, please sign up and make your next dog walking appointment today! We look forward to meeting you and your dogs!
                 </p>
             </div>
         </div>

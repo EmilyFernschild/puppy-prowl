@@ -30,7 +30,12 @@ function AccountAppoint({appointment, updateAppt, expand, deleteAppt}){
     return (
         <div className="profile-li">
             {expand && 
-            <div id="text" >{fDates} <button className="secondary-btn" onClick={handleDelete}>x</button></div>
+            <div className="profile-text">
+                <div className="text">
+                    {fDates} 
+                    <button className="secondary-btn" id="x-btn" onClick={handleDelete}>x</button>
+                </div>
+            </div>
             }
             {/* <button onClick={handleUpdate}>Update</button> */}
         </div>

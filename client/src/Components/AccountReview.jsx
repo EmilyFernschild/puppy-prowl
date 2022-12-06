@@ -12,7 +12,12 @@ function AccountReview({review, deleteReview, expand}){
     return(
         <div className="profile-li" >
             {expand && 
-            <div id="text">{review.comment} <button className="secondary-btn" onClick={handleDelete}>x</button> </div>
+            <div className="profile-text">
+                <div className="text">
+                    {review.comment} 
+                    <button className="secondary-btn" id="x-btn" onClick={handleDelete}>x</button> 
+                </div>
+            </div>
             }
         </div>
     )
