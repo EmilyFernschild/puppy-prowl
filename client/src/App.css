@@ -327,8 +327,15 @@ overflow: hidden;
   clear: both;
 }
 .profile-btn-container{
-  margin-inline: 8rem;
-  clear: both;
+  justify-content: center;
+  min-width: 33%;
+  /* margin-inline: 10rem; */
+}
+.profile-btn-container:first-child {
+  margin-right: auto; 
+  }
+.profile-btn-container:last-child {
+  margin-left: auto;
 }
 .profile-li{
   display: flex;
@@ -420,142 +427,4 @@ overflow: hidden;
   font-family: monospace;
   background: transparent;
   margin-top: 8rem;
-}
-
-
-/* .footer{
-  padding: 60px;
-  background-color: var(--darkgreen);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-} */
-/* create the paw prints */
-.pad {
-  width: 8.8px;
-  height: 10px;
-  background-color: var(--orange);
-  -webkit-border-radius: 63px 63px 63px 63px / 108px     108px 72px 72px;
-  border-radius: 50%  50%  50%  50%  / 60%   60%         40%  40%;
-  display: block;
-  position: absolute;
-}       
-.large {
- width: 29.33px;
- height: 35.196px;
- transform: rotate(80deg);
- left: 120px;
- top: 60px;
-} 
-.small-1 {
- transform: rotate(50deg);
- left: 145px;
- top: 50px;
-}
-.small-2 {
- transform: rotate(65deg);
- left: 158px;
- top: 60px;
-}  
-.small-3 {
- transform: rotate(98deg);
- position: absolute;
- left: 160px;
- top: 76px;
-}
-.small-4 {
- transform: rotate(140deg);
- position: absolute;
- left: 150px;
- top: 89px;
-}
-  
-/* position and animate */
-  
-.paw-print-1 {
-opacity: 0;
-position: absolute;
-left: -100px;
-top: -10px;
-transform: rotate(-10deg);
--webkit-animation: walk 3s linear infinite;
-animation: /*keyframe*/walk /*duration*/3s /*transition*/linear /*repeat*/infinite;
-}
-.paw-print-2 {
-opacity: 0;
-position: absolute;
-left: -10px;
-top: 15px;
-transform: rotate(-5deg); 
--webkit-animation: walk 3s linear infinite 0.25s;
-animation: walk 3s linear infinite /*delay*/0.25s;
-}
-.paw-print-3 {
-opacity: 0;
-position: absolute;
-left: 70px;
-top: -10px;
-transform: rotate(-10deg); 
--webkit-animation: walk 3s linear infinite 0.5s;
-animation: walk 3s linear infinite 0.5s;
-}     
-.paw-print-4 {
-opacity: 0;
-position: absolute;
-left: 140px;
-top: 30px;
-transform: rotate(-10deg); 
--webkit-animation: walk 3s linear infinite 0.75s;
-animation: walk 3s linear infinite 0.75s;
-}    
-.paw-print-5 {
-opacity: 0;
-position: absolute;
-left: 240px;
-top: -55px;
-transform: rotate(5deg); 
--webkit-animation: walk 3s linear infinite 1s;
-animation: walk 3s linear infinite 1s;
-}   
-.paw-print-6 {
-opacity: 0;
-position: absolute;
-left: 320px;
-top: -20px;
-transform: rotate(10deg); 
--webkit-animation: walk 3s linear infinite 1.25s;
-animation: walk 3s linear infinite 1.25s;
-}   
-.paw-print-7 {
-opacity: 0;
-position: absolute;
-left: 420px;
-top: -85px;
-transform: rotate(20deg); 
--webkit-animation: walk 3s linear infinite 1.5s;
-animation: walk 3s linear infinite 1.5s;
-}   
-.paw-print-8 {
-opacity: 0;
-position: absolute;
-left: 470px;
-top: -10px;
-transform: rotate(5deg); 
--webkit-animation: walk 3s linear infinite 1.75s;
-animation: walk 3s linear infinite 1.75s;
-}
-  
-/* walking effect animation keyframes */
-  
-@-webkit-keyframes walk {
-25%  {opacity: 1;}
-100% {opacity: 0;}
-}
-  
-@keyframes walk {
-/* appear */
-25%  {opacity: 1;}
-/* disappear */
-100% {opacity: 0;}
 }

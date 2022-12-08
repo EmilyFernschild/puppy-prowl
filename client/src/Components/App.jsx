@@ -14,7 +14,6 @@ import EditPupForm from "./EditPupForm";
 import { useState, useEffect } from "react";
 import ReviewForm from "./ReviewForm";
 import NotFound from "./NotFound";
-import Footer from "./Footer";
 
 function App() {
   const [pups, setPups] = useState([]);
@@ -126,7 +125,6 @@ function App() {
         <Route path="/client/:id" element = {<Account pups={pups} EditPup={onEditPup} appointments={appointments} deleteAppt={deleteAppt} deleteClient={deleteClient} deleteDog={deleteDog} deleteReview={deleteReview} client={client} setClient={setClient} clientToEdit={clientToEdit} reviews={reviews} onUpdateClient={onUpdateClient} />}/>
         <Route path="*" element={<NotFound />} />  
      </Routes>
-     <Footer />
     </div>
   )
 }
