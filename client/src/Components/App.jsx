@@ -29,7 +29,7 @@ function App() {
     fetch("/dogs")
     .then((res) => res.json())
     .then((data) => setPups(data))
-  },[pupToEdit, client])
+  },[pupToEdit]) 
 
   useEffect(() => {
     fetch("/walkers")
@@ -90,7 +90,7 @@ function App() {
 
   function deleteDog(deletedDog){
     const updatedDogs = pups.filter((dog)=> dog.id !== deletedDog.id)
-    setAppointments(updatedDogs)
+    setPups(updatedDogs)
   }
 
   function deleteClient(deletedClient){

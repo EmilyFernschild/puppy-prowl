@@ -17,7 +17,10 @@ function Walker({walker}){
             <br />
             {walker.location}
             </Card.Text>
-            <div className='review-card'><div className="review-title">Reviews:</div>{walker.reviews?.map((review) => <Review key={review.id} review={review} />)}</div>
+            <div className='review-card'>
+                <div className="review-title">Reviews:</div>
+                    {walker.reviews?.map((review) => <Review key={review.id} review={review} />)}
+            </div>
            </Card.Body>
            <br/>
         </div>

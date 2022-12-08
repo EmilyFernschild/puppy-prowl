@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import Form from 'react-bootstrap/Form';
 
 function EditPupForm({ pupToEdit = {}, onUpdatePup, client }){
     const [formData, setFormData] = useState(pupToEdit);
     const [errors, setErrors] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const {newImg, newName, newGender, newAge, newSize } = formData;
 
     // useEffect(()=>{
     //   fetch(`/dogs/${pupToEdit.id}`)
@@ -45,55 +45,45 @@ function EditPupForm({ pupToEdit = {}, onUpdatePup, client }){
 
     return(
     <div className='new-pup-form'>
-    <form onSubmit={handleSubmit} className="form" >
+    <Form onSubmit={handleSubmit} className='edit-pup-form' >
       <h3>Edit Puppy Info</h3>
-      <label>Dog Name: </label>
-      <br/>
-      <input
+      <Form.Label>Dog Name: </Form.Label>
+      <Form.Control
         type='text'
         name='dog_name'
         defaultValue={pupToEdit.dog_name}
         onChange={handleChange}
       />
-      <br/>
-      <label>Dog Image:</label>
-      <br/>
-      <input
+      <Form.Label>Dog Image:</Form.Label>
+      <Form.Control
         type='text'
         name='dog_image'
         defaultValue={pupToEdit.dog_image}
         onChange={handleChange}
       />
-      <br/>
-      <label>Gender:</label>
-      <br/>
-      <input
+      <Form.Label>Gender:</Form.Label>
+      <Form.Control
         type='text'
         name='gender'
         defaultValue={pupToEdit.gender}
         onChange={handleChange}
       />
-      <br/>
-      <label >Age:</label>
-      <br/>
-      <input
+      <Form.Label >Age:</Form.Label>
+      <Form.Control
         type='text'
         name='age'
         defaultValue={pupToEdit.age}
         onChange={handleChange}
       />
-      <br/>
-      <label>Size:</label>
-      <br/>
-      <input
+      <Form.Label>Size:</Form.Label>
+      <Form.Control
         type='text'
         name='size'
         defaultValue={pupToEdit.size}
         onChange={handleChange}
       />
-      <br/>
       <button className="primary-btn" type="submit">Update Dog</button>
-    </form>
+    </Form>
       {errors? <div className='errors'>{errors}</div>:null} 
       <div>{isLoading ? "Loading..." : null }</div>
     </div>

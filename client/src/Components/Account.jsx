@@ -32,12 +32,12 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, dele
         fetch(`/clients/${id}`)
         .then((r) => {
             if (r.ok){
-                r.json().then(setClient)
+                r.json().then(data => setClient(data))
             } else {
                 r.json().then((err) => err.error)
             }
         })
-    }, [id, appointments, pups, reviews])
+    }, [id, reviews, appointments, pups])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -89,12 +89,11 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, dele
           ]
         })
     }
-    
 
     return (
         <div className="profile">
            <img className="logo" alt="profile logo" src="https://cdn-icons-png.flaticon.com/512/5494/5494947.png"/>
-           <h2> Profile:</h2>
+           <h2>Profile:</h2>
            {!isForm ?
             <div className='account-form-container'>
                 <div className="account-nonform">
@@ -179,7 +178,7 @@ function Account({client, clientToEdit, reviews, onUpdateClient, setClient, dele
                 <div className="profile-btn-container">
                 <button className="secondary-btn" onClick={()=> setExpandAppoint(!expandAppoint)}>Appointments</button>
                     <div className="profile-li">{client.appointments?.map((appointment) => {
-                        return <AccountAppoint key={appointment.id}  expand={expandAppoint} appointment={appointment} deleteAppt={deleteAppt} appointments={appointments} />
+                        return <AccountAppoint key={appointment.id} expand={expandAppoint} appointment={appointment} deleteAppt={deleteAppt} />
                     })}
                     </div>
                 </div>
