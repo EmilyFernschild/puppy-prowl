@@ -82,6 +82,6 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: puppy_prowl_production
-  username: puppy_prowl
-  password: <%= ENV["PUPPY_PROWL_DATABASE_PASSWORD"] %>
+  # database: puppy_prowl_production
+  # username: puppy_prowl
+  # password: <%= ENV["PUPPY_PROWL_DATABASE_PASSWORD"] %>
