@@ -119,7 +119,7 @@ a3 = Appointment.create(client_id: rand(c1.id..c4.id), walker_id: rand(w1.id..w2
 
 puts "Seeding Reviews..."
 
-r1 = Review.create(client_id: rand(c1.id..c4.id), walker_id: rand(w1.id), date: "2022-12-7T12:25:00.000Z", comment: "Best dog walker I have tried! My dog is much more well behaved on walks now. 10/10 would recommend!")
-r2 = Review.create(client_id: rand(c1.id..c4.id), walker_id:  rand(w2.id), date: "2022-12-8T11:15:00.000Z", comment: "Such a great dog walker! Very professional and always treats my dogs with such great care!")
+r1 = Review.create(client_id: c1.id, walker_id: w1.id, date: "2022-12-7T12:25:00.000Z", comment: "Best dog walker I have tried! My dog is much more well behaved on walks now. 10/10 would recommend!")
+r2 = Review.create(client_id: c4.id, walker_id: w2.id, date: "2022-12-8T11:15:00.000Z", comment: "Such a great dog walker! Very professional and always treats my dogs with such great care!")
 
 puts "Done Seeding"
