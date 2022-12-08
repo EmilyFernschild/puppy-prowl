@@ -43,7 +43,7 @@ body{
 .main-slide{
   padding: 30px;
   padding-inline: 0px;
-  margin-top: 3.4rem;
+  margin-top: 3rem;
   clear: right;
 }
 .slide{
@@ -91,7 +91,7 @@ body{
   margin: 0px;
   margin-top: 10px;
   text-align: center;
-  font-size: 38px;
+  font-size: 40px;
   letter-spacing: 0.2rem;
   clear: right;
   text-shadow: 3px 2px 0px rgb(5, 27, 29);
@@ -302,7 +302,7 @@ img {max-width:100%;}
   padding-inline: 3rem;
 }
 .form-pic{
-width: 20.04rem;
+width: 20.6rem;
 height: auto;
 margin-left: auto;
 overflow: hidden;
@@ -410,7 +410,9 @@ overflow: hidden;
   font-size: 18px;
   line-height: 1;
 }
-
+#welcome-slogan{
+  color: var(--lightgreen);
+}
 .delete-btn{
   font-size: 20px;
   text-transform: uppercase;
