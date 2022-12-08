@@ -41,7 +41,7 @@ function NewPupForm({addNewPup, client}){
             if(r.ok){
                 r.json().then((data) =>{
                     addNewPup(data)
-                    navigate(`/PupsContainer`)
+                    navigate(`/client/${client.id}`)
                 })
             } else {
                 r.json().then((err) => setErrors(err.errors))
