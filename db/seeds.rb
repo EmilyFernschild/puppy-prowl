@@ -112,15 +112,14 @@ w1 = Walker.create(walker_name: "Joanna Windler", walker_email: "JWindler@puppyp
 w2 = Walker.create(walker_name: "Gianna Crooks", walker_email: "GCrooks@puppyprowl.com", location: "Monroe, CT", rates: rand(25..35), services: "Dog Walking")
 
 puts "Seeding Appointments..."
- #=> appointment format maybe? "October 21, 2018 20:47"
 a1 = Appointment.create(client_id: rand(c1.id..c4.id), walker_id: rand(w1.id..w2.id), number_of_dogs: rand(1..3), group_walks: false, appointment: "2022-12-8T12:30:00.000Z") 
 a2 = Appointment.create(client_id: rand(c1.id..c4.id), walker_id: rand(w1.id..w2.id), number_of_dogs: rand(1..3), group_walks: false, appointment: "2022-12-8T11:15:00.000Z") 
 a3 = Appointment.create(client_id: rand(c1.id..c4.id), walker_id: rand(w1.id..w2.id), number_of_dogs: rand(1..3), group_walks: false, appointment: "2022-12-8T11:30:00.000Z") 
 
 puts "Seeding Reviews..."
 
-r1 = Review.create(client_id: rand(c1.id..c4.id), walker_id: rand(w1.id), date: "2022-12-7T12:25:00.000Z", comment: "Best dog walker I have tried! My dog is much more well behaved on walks now. 10/10 would recommend!")
-r2 = Review.create(client_id: rand(c1.id..c4.id), walker_id: rand(w1.id), date: "2022-12-8T11:15:00.000Z", comment: "Such a great dog walker! Very professional and always treats my dogs with such great care!")
-r3 = Review.create(client_id: rand(c1.id..c4.id), walker_id: rand(w2.id), date: "2022-12-5T10:30:00.000Z", comment: "Greatest dog walker ever!! My dogs are happy and so am I!")
+r1 = Review.create(client_id: rand(c1.id..c4.id), walker_id: w1.id, date: "2022-12-7T12:25:00.000Z", comment: "Best dog walker I have tried! My dog is much more well behaved on walks now. 10/10 would recommend!")
+r2 = Review.create(client_id: rand(c1.id..c4.id), walker_id: w1.id, date: "2022-12-8T11:15:00.000Z", comment: "Such a great dog walker! Very professional and always treats my dogs with such great care!")
+r3 = Review.create(client_id: rand(c1.id..c4.id), walker_id: w2.id, date: "2022-12-5T10:30:00.000Z", comment: "Greatest dog walker ever!! My dogs are happy and so am I!")
 
 puts "Done Seeding"
