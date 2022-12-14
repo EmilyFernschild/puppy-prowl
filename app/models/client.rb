@@ -1,8 +1,8 @@
 class Client < ApplicationRecord
     has_many :dogs, dependent: :destroy
-    has_many :reviews
+    has_many :reviews, dependent: :destroy
     has_many :appointments, dependent: :destroy
-    has_many :walkers, through: :appointments
+    has_many :walkers, through: :appointments, dependent: :destroy
 
     validates_presence_of :client_name, :email, :address, :username
     validates_uniqueness_of :username, :email
